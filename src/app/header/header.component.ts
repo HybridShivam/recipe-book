@@ -7,23 +7,11 @@ import {Component, EventEmitter, Output} from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-  headerName = 'Shivam';
-  menuItems = ['Home', 'Pokemon', 'About'];
+
+
   currentTab = 'recipe';
   // Events for Tab Selection
   @Output() tabClickEvent = new EventEmitter<string>();
-
-  headerElementActive = false;
-
-
-  setActive() {
-    this.headerElementActive = true;
-  }
-
-  unsetActive() {
-    this.headerElementActive = false;
-  }
-
 
   recipeClicked() {
     this.currentTab = 'recipe';
