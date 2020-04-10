@@ -1,0 +1,11 @@
+<a class="list-group-item clearfix list-group-item-action btn btn-outline-dark" (click)="recipeClicked()" role="button">
+  <div class="float-left">
+    <h4 class="list-group-item-heading">{{recipe.name}}</h4>
+    <p class="list-group-item-text">{{recipe.desc}}</p>
+  </div>
+  <span class="float-right">
+        <img
+          [src]="recipe.imagePath"
+          alt="" class="img-fluid" style="max-height: 70px">
+      </span>
+</a>
