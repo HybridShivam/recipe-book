@@ -1,8 +1,9 @@
 <div class="row">
   <div class="col-12">
-    <img src="{{recipeFromRecipeComponent.imagePath}}" alt="" class="img-fluid">
+    <img src="{{recipeFromRecipeComponent.imagePath}}" alt="" class="img-fluid rounded shadow">
   </div>
 </div>
+<br>
 <div class="row">
   <div class="col-12">
     <h1>{{recipeFromRecipeComponent.name}}</h1>
@@ -14,16 +15,24 @@
       <button type="button" class="btn btn-primary dropdown-toggle" appDropdown>Manage Recipe <span class="caret"></span>
       </button>
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">To Shopping List</a>
+        <a class="dropdown-item" (click)="goToShopping(recipeFromRecipeComponent.ingredients)" style="cursor: pointer">To Shopping List</a>
         <a class="dropdown-item" href="#">Edit Recipe</a>
         <a class="dropdown-item" href="#">Delete Recipe</a>
       </div>
     </div>
   </div>
 </div>
+<hr>
 <div class="row">
   <div class="col-12">{{recipeFromRecipeComponent.desc}}</div>
 </div>
+<hr>
 <div class="row">
-  <div class="col-12">Ingredients</div>
+  <div class="col-6"><div class="font-weight-bold">Ingredients</div>
+  <div class="list-group">
+    <div class="list-group-item " *ngFor="let ingredient of recipeFromRecipeComponent.ingredients">
+      {{ingredient.name}} ({{ingredient.amount}})
+    </div>
+  </div>
+  </div>
 </div>
