@@ -11,16 +11,16 @@ export class HeaderComponent {
 
   currentTab = 'recipe';
   // Events for Tab Selection
-  @Output() tabClickEvent = new EventEmitter<string>();
+  // @Output() tabClickEvent = new EventEmitter<string>();
 
-  recipeClicked() {
-    this.currentTab = 'recipe';
-    this.tabClickEvent.emit('recipe');
-  }
-
-
-  shoppingListClicked() {
-    this.currentTab = 'shoppingList';
-    this.tabClickEvent.emit('shoppingList');
-  }
+  // recipeClicked() {
+  //   this.currentTab = 'recipe';
+  //   this.tabClickEvent.emit('recipe');
+  // }
+  //
+  //
+  // shoppingListClicked() {
+  //   this.currentTab = 'shoppingList';
+  //   this.tabClickEvent.emit('shoppingList');
+  // }
 }

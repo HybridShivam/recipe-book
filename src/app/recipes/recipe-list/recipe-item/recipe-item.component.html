@@ -1,4 +1,4 @@
-<a class="list-group-item clearfix list-group-item-action btn btn-outline-dark" (click)="recipeClicked()" role="button">
+<a class="list-group-item clearfix list-group-item-action btn btn-outline-dark" [routerLink]="[id]" routerLinkActive="active" role="button">
   <div class="row">
     <div class="col-7">
       <h4 class="list-group-item-heading">{{recipe.name}}</h4>
