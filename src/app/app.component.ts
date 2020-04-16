@@ -6,10 +6,4 @@ import {Component} from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'hybrid-angular';
-  tab = 'recipe';
-
-  tabButtonClick(choose: string) {
-    this.tab = choose;
-  }
 }
