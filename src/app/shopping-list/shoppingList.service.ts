@@ -1,15 +1,17 @@
 import {Ingredient} from '../shared/ingredient.model';
-import {Injectable} from '@angular/core';
+import {Injectable, OnInit} from '@angular/core';
 import {Subject} from 'rxjs';
 
 @Injectable()
-export class ShoppingListService {
+export class ShoppingListService implements OnInit{
 
   editingModeSubject=new Subject<number>();
   ingredients: Ingredient[] = [new Ingredient('Apples', 3), new Ingredient('Bananas', 4)];
   ingredientsEmitter = new Subject<Ingredient[]>();
-  editingMode=false;
   modeEmitter=new Subject<boolean>();
+
+  ngOnInit(): void {
+  }
 
   addIngredients(ingredient: Ingredient) {
     this.ingredients.push(ingredient);

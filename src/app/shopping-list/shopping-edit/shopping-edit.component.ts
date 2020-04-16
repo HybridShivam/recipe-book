@@ -15,6 +15,7 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
   editingMode = false;
   editingItemIndex: number;
   editedIngredient: Ingredient;
+  isEmpty=false;
 
   constructor(private shoppingListService: ShoppingListService) {
   }
@@ -30,6 +31,7 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
         amount: this.editedIngredient.amount
       });
     });
+    this.isEmpty=this.shoppingListService.ingredients.length == 0;
   }
 
   ngOnDestroy(): void {
@@ -49,9 +51,18 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
       this.shoppingListService.modeEmitter.next(this.editingMode);
       form.reset();
     }
+    this.isEmpty=this.shoppingListService.ingredients.length == 0;
   }
 
-  onClear(){
+  onClear() {
+    this.editingMode = false;
+    this.shoppingListService.modeEmitter.next(this.editingMode);
+    this.form.reset();
+  }
+
+  onDelete() {
+    this.shoppingListService.ingredients.splice(this.editingItemIndex, 1);
+    this.isEmpty=this.shoppingListService.ingredients.length == 0;
     this.editingMode = false;
     this.shoppingListService.modeEmitter.next(this.editingMode);
     this.form.reset();
