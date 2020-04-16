@@ -15,8 +15,10 @@
         <div class="col-7 btn-group">
           <button class="btn btn-success" type="submit" [disabled]="!f.valid">{{editingMode ? "Update" : "Add"}}
           </button>
-          <button class="btn btn-danger" type="button" (click)="onDelete()" [disabled]="isEmpty==true||editingMode==false">Delete</button>
+          <button class="btn btn-danger" type="button" *ngIf="editingMode==true" (click)="onDelete()" >Delete</button>
           <button class="btn btn-primary" type="button" (click)="onClear()">Clear</button>
+<!--          Add this property to Delete Button-->
+<!--          [disabled]="isEmpty==true||editingMode==false"-->
         </div>
       </div>
     </form>

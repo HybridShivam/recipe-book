@@ -1,3 +1,4 @@
+<br>
 <div class="row">
   <div class="col-12">
     <img src="{{recipeFromRecipeComponent.imagePath}}" alt="" class="img-fluid rounded shadow">
@@ -15,7 +16,7 @@
       <button type="button" class="btn btn-primary dropdown-toggle" appDropdown>Manage Recipe <span class="caret"></span>
       </button>
       <div class="dropdown-menu">
-        <a class="dropdown-item" (click)="goToShopping(recipeFromRecipeComponent.ingredients)" style="cursor: pointer">To Shopping List</a>
+        <a class="dropdown-item" (click)="goToShopping(recipeFromRecipeComponent.ingredients)" style="cursor: pointer" routerLink="/shopping-list">Add To Shopping List</a>
         <a class="dropdown-item" routerLink="edit" href="#">Edit Recipe</a>
         <a class="dropdown-item" href="#">Delete Recipe</a>
       </div>
