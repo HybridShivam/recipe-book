@@ -9,6 +9,7 @@ export class ShoppingListService {
   ingredients: Ingredient[] = [new Ingredient('Apples', 3), new Ingredient('Bananas', 4)];
   ingredientsEmitter = new Subject<Ingredient[]>();
   editingMode=false;
+  modeEmitter=new Subject<boolean>();
 
   addIngredients(ingredient: Ingredient) {
     this.ingredients.push(ingredient);
