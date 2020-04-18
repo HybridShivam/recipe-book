@@ -1,9 +1,9 @@
-<br>
+<br #recipe>
 <br>
 <br>
 <div class="row">
   <div class="col-12">
-    <img src="{{recipeFromRecipeComponent.imagePath}}" alt="" class="img-fluid rounded shadow">
+    <img src="{{recipeFromRecipeComponent.imagePath}}" alt="" class="img-fluid rounded shadow" (click)="scrollToElement(recipe)">
   </div>
 </div>
 <br>
@@ -13,9 +13,9 @@
   </div>
   <div class="col-4 text-right">
     <div class="btn-group dropup">
-      <button type="button" class="btn btn-primary dropdown-toggle" appDropdown>Manage Recipe <span class="caret"></span>
+      <button type="button" class="btn btn-primary dropdown-toggle" appDropdown style="white-space: break-spaces">Manage Recipe <span class="caret"></span>
       </button>
-      <div class="dropdown-menu" data-placement="auto">
+      <div class="dropdown-menu dropdown-menu-right" data-placement="auto">
         <a class="dropdown-item" (click)="goToShopping(recipeFromRecipeComponent.ingredients)" style="cursor: pointer" routerLink="/shopping-list">Add To Shopping List</a>
         <a class="dropdown-item" routerLink="edit" href="#">Edit Recipe</a>
         <a class="dropdown-item" (click)="deleteRecipe()" routerLink="/recipes">Delete Recipe</a>
@@ -29,7 +29,7 @@
 </div>
 <hr>
 <div class="row">
-  <div class="col-6"><div class="font-weight-bold">Ingredients</div>
+  <div class="col-6"><div class="font-weight-bold" #ingredients>Ingredients</div>
   <div class="list-group">
     <div class="list-group-item " *ngFor="let ingredient of recipeFromRecipeComponent.ingredients">
       {{ingredient.name}} ({{ingredient.amount}})

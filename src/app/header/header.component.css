@@ -1,7 +1,57 @@
 .selectedTab {
   background-color: lightsteelblue;
 }
+.dropdown-toggle::after {
+  display: none;
+}
 
 .navbar-brand{
   color: black;
 }
+@media (max-width: 767px) {
+  .navbar-toggleable-sm {
+    clear: both;
+  }
+}
+.nav-link {
+  display: inline-grid;
+}
+/*.icon-bar {*/
+/*  width: 22px;*/
+/*  height: 2px;*/
+/*  background-color: #B6B6B6;*/
+/*  display: block;*/
+/*  transition: all 0.2s;*/
+/*  margin-top: 4px*/
+/*}*/
+
+/*.navbar-toggler {*/
+/*  border: none;*/
+/*  background: transparent !important;*/
+/*}*/
+
+/*.navbar-toggler .top-bar {*/
+/*  transform: rotate(45deg);*/
+/*  transform-origin: 10% 10%;*/
+/*}*/
+
+/*.navbar-toggler .middle-bar {*/
+/*  opacity: 0;*/
+/*}*/
+
+/*.navbar-toggler .bottom-bar {*/
+/*  transform: rotate(-45deg);*/
+/*  transform-origin: 10% 90%;*/
+/*}*/
+
+/*.navbar-toggler.collapsed .top-bar {*/
+/*  transform: rotate(0);*/
+/*}*/
+
+/*.navbar-toggler.collapsed .middle-bar {*/
+/*  opacity: 1;*/
+/*}*/
+
+/*.navbar-toggler.collapsed .bottom-bar {*/
+/*  transform: rotate(0);*/
+/*}*/

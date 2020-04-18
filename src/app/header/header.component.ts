@@ -11,6 +11,7 @@ export class HeaderComponent {
 
 
   currentTab = 'recipe';
+  isCollapsed=true;
 
   constructor(private dataStorageService: DataStorageService) {
   }
@@ -23,6 +24,15 @@ export class HeaderComponent {
   fetchRecipes(){
     this.dataStorageService.fetchRecipes();
   }
+
+  collapseToggle(){
+    this.isCollapsed=!this.isCollapsed;
+  }
+
+  collapse(){
+    this.isCollapsed=true;
+  }
+
 
   // Events for Tab Selection
   // @Output() tabClickEvent = new EventEmitter<string>();

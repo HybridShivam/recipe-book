@@ -23,6 +23,7 @@
     "bootstrap": "^4.4.1",
     "pokedex-api": "^1.1.2",
     "rxjs": "~6.5.4",
+    "smoothscroll-polyfill": "^0.4.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
   },

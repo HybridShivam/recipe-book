@@ -38,5 +38,9 @@ export class RecipeDetailComponent implements OnInit {
     this.recipeService.deleteRecipe(this.id);
   }
 
+  scrollToElement($element): void {
+    console.log($element);
+    $element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+  }
 
 }

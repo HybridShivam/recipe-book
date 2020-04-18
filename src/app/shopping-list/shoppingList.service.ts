@@ -6,7 +6,7 @@ import {Subject} from 'rxjs';
 export class ShoppingListService implements OnInit{
 
   editingModeSubject=new Subject<number>();
-  ingredients: Ingredient[] = [new Ingredient('Apples', 3), new Ingredient('Bananas', 4)];
+  ingredients: Ingredient[]=[]; //= [new Ingredient('Apples', 3), new Ingredient('Bananas', 4)];
   ingredientsEmitter = new Subject<Ingredient[]>();
   modeEmitter=new Subject<boolean>();
 
