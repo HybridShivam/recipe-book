@@ -3,12 +3,12 @@ import {Injectable, OnInit} from '@angular/core';
 import {Subject} from 'rxjs';
 
 @Injectable()
-export class ShoppingListService implements OnInit{
+export class ShoppingListService implements OnInit {
 
-  editingModeSubject=new Subject<number>();
-  ingredients: Ingredient[]=[]; //= [new Ingredient('Apples', 3), new Ingredient('Bananas', 4)];
+  editingModeSubject = new Subject<number>();
+  ingredients: Ingredient[] = []; //= [new Ingredient('Apples', 3), new Ingredient('Bananas', 4)];
   ingredientsEmitter = new Subject<Ingredient[]>();
-  modeEmitter=new Subject<boolean>();
+  modeEmitter = new Subject<boolean>();
 
   ngOnInit(): void {
   }
@@ -20,5 +20,11 @@ export class ShoppingListService implements OnInit{
   transferIngredients(ingredient: Ingredient[]) {
     this.ingredientsEmitter.next(ingredient);
   }
+
+  importIngredients(ingre) {
+    this.ingredients = ingre;
+    this.ingredientsEmitter.next(ingre);
+  }
+
 
 }

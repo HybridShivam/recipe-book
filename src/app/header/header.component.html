@@ -24,6 +24,7 @@
              aria-labelledby="manageMenu" id="manage">
           <a class="dropdown-item" style="cursor: pointer" (click)="storeRecipes();collapse()">Save Personal Data</a>
           <a class="dropdown-item" style="cursor: pointer" (click)="fetchRecipes();collapse()" routerLink="/">Fetch Personal Data</a>
+          <a class="dropdown-item" style="cursor: pointer" (click)="saveAsServerRecipes();collapse()" routerLink="/">Save as Server's Original Data</a>
           <a class="dropdown-item" style="cursor: pointer" (click)="revertToServerRecipes();collapse()" routerLink="/">Revert to Server's Original Data</a>
         </div>
       </li>

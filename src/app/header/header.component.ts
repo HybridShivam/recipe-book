@@ -33,6 +33,12 @@ export class HeaderComponent {
     this.isCollapsed=true;
   }
 
+
+  saveAsServerRecipes(){
+    this.dataStorageService.saveAsServerRecipes();
+  }
+
+
   revertToServerRecipes(){
     this.dataStorageService.revertToServerRecipes();
   }
