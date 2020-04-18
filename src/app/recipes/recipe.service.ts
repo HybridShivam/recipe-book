@@ -52,6 +52,12 @@ export class RecipeService {
     this.recipesChanged.next(this.recipes.slice());
   }
 
+
+  importFetchedRecipes(recipes: Recipe[]) {
+    this.recipes = recipes;
+    this.recipesChanged.next(this.recipes.slice());
+  }
+
   // deleteRecipe(index: number) {
   //   this.recipes.splice(index, 1);
   //   this.recipesChanged.next(this.recipes.slice());

@@ -18,6 +18,9 @@ import {HttpClientModule} from '@angular/common/http';
 import {AppRoutingModule} from './app-routing.module';
 import {RecipeStartComponent} from './recipes/recipe-start/recipe-start.component';
 import {RecipeEditComponent} from './recipes/recipe-edit/recipe-edit.component';
+// import "@angular/compiler";
+// // MDB Angular Pro
+// import { ButtonsModule, WavesModule, DropdownModule } from 'angular-bootstrap-md';
 
 // import {Pokedex} from 'pokedex-api';
 
@@ -42,7 +45,10 @@ import {RecipeEditComponent} from './recipes/recipe-edit/recipe-edit.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    // ButtonsModule,
+    // WavesModule,
+    // DropdownModule.forRoot()
   ],
   providers: [RecipeService, ShoppingListService],
   bootstrap: [AppComponent]

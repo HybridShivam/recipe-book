@@ -20,6 +20,10 @@ export class HeaderComponent {
     this.dataStorageService.storeRecipes();
   }
 
+  fetchRecipes(){
+    this.dataStorageService.fetchRecipes();
+  }
+
   // Events for Tab Selection
   // @Output() tabClickEvent = new EventEmitter<string>();
 
