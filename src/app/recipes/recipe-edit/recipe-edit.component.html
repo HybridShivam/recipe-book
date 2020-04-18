@@ -5,7 +5,7 @@
       <div class="row">
         <div class="col-4 btn-group">
           <button type="submit" class="btn btn-success" [disabled]="!recipeForm.valid">Save</button>
-          <button type="button" class="btn btn-danger">Cancel</button>
+          <button type="button" class="btn btn-danger" routerLink="../">Cancel</button>
 
         </div>
       </div>
@@ -23,15 +23,17 @@
           <div class="form-group">
             <label for="imagePath">Image URL</label>
             <input type="text" id="imagePath" class="form-control"
-                   formControlName="imagePath">
+                   formControlName="imagePath" #imageURL>
           </div>
         </div>
       </div>
+      <br>
       <div class="row">
         <div class="col-12">
-          <img [src]="" class="img-fluid">
+          <img [src]="imageURL.value" class="img-fluid rounded shadow">
         </div>
       </div>
+      <br>
       <div class="row">
         <div class="col-12">
           <div class="form-group">
@@ -44,14 +46,14 @@
       <div class="row">
         <div class="col-12" formArrayName="ingredients">
           <div class="row" *ngFor="let ingredientCtrl of getControls(); let i = index" [formGroupName]="i" style="margin-top: 10px">
-            <div class="col-9">
+            <div class="col-8">
               <input type="text" class="form-control" formControlName="name">
             </div>
-            <div class="col-2">
+            <div class="col-3">
               <input type="number" class="form-control" formControlName="amount">
             </div>
             <div class="col-1">
-              <button type="button" class="btn btn-danger btn-sm">X</button>
+              <button type="button" class="btn btn-danger btn-sm" (click)="deleteIngredient(i)">X</button>
             </div>
           </div>
           <hr>

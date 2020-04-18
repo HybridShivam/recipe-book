@@ -5,7 +5,7 @@ import {Subject} from 'rxjs';
 
 export class RecipeService {
 
-  recipesChanged=new Subject<Recipe[]>();
+  recipesChanged = new Subject<Recipe[]>();
 
   private recipes: Recipe[] = [
     new Recipe('Pizza',
@@ -19,7 +19,14 @@ export class RecipeService {
     new Recipe('Hotcake',
       'A pancake (or hotcake, griddlecake, or flapjack, not to be confused with oat bar flapjacks) is a flat cake, often thin and round, prepared from a starch-based batter that may contain eggs, milk and butter and cooked on a hot surface such as a griddle or frying pan, often frying with oil or butter.',
       'https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Blueberry_pancakes_%283%29.jpg/1200px-Blueberry_pancakes_%283%29.jpg',
-      [new Ingredient('Namakeen', 4), new Ingredient('Buns', 2), new Ingredient('Noodles', 1), new Ingredient('Maida', 1)])];
+      [new Ingredient('Namakeen', 4), new Ingredient('Buns', 2), new Ingredient('Noodles', 1), new Ingredient('Maida', 1)]),
+    new Recipe('Pasta',
+      'A quick pasta dinner makes weeknights go smoothly, whether you are rushing home from work or trying to feed the hungry hordes in a hurry.\n' +
+      '\n' +
+      'This one combines frozen artichokes and spinach in a creamy ricotta sauce. It’s on the table in less under 30 minutes.',
+      'https://www.simplyrecipes.com/wp-content/uploads/2018/04/Pasta-Artichokes-Lemon-ALT-LEAD-2.jpg',
+      [new Ingredient('Pasta', 4), new Ingredient('BreadCrumbs', 2), new Ingredient('Sauce', 1), new Ingredient('Cheese', 1)])
+  ];
 
   getRecipes() {
     return this.recipes.slice();
@@ -36,6 +43,12 @@ export class RecipeService {
 
   updateRecipe(index: number, newRecipe: Recipe) {
     this.recipes[index] = newRecipe;
+    this.recipesChanged.next(this.recipes.slice());
+  }
+
+
+  deleteRecipe(index: number) {
+    this.recipes.splice(index, 1);
     this.recipesChanged.next(this.recipes.slice());
   }
 
