@@ -25,7 +25,7 @@ export class DataStorageService implements OnInit {
       this.firstTimeLogin = true;
     }
     this.getInitialData();
-    console.log(this.uniqueID);
+    console.log("Unique ID" +this.uniqueID);
   }
 
   ngOnInit(): void {
@@ -81,7 +81,7 @@ export class DataStorageService implements OnInit {
       if (recipes == null) {
         recipes = [];
       }
-      console.log(recipes);
+      console.log("Fetched",recipes);
       this.recipeService.importFetchedRecipes(recipes);
     });
     //Ingredients
@@ -91,7 +91,7 @@ export class DataStorageService implements OnInit {
         if (ingredients == null) {
           ingredients = [];
         }
-        console.log(ingredients,this.uniqueID);
+        console.log("Fetched",ingredients);
         this.shoppingListService.importIngredients(ingredients);
       });
   }
@@ -123,7 +123,7 @@ export class DataStorageService implements OnInit {
         if (recipes == null) {
           recipes = [];
         }
-        console.log(recipes);
+        console.log("Reverted to",recipes);
         this.recipeService.importFetchedRecipes(recipes);
         //Now Store to userRecipes
         this.http.put('https://recipebook-6eef7.firebaseio.com/user-recipes/' + this.uniqueID + '.json', recipes).subscribe(response => {
@@ -136,7 +136,7 @@ export class DataStorageService implements OnInit {
         if (ingredients == null) {
           ingredients = [];
         }
-        console.log(ingredients);
+        console.log("Reverted to",ingredients);
         this.shoppingListService.importIngredients(ingredients);
         //Now Store to userIngredients
         this.http.put('https://recipebook-6eef7.firebaseio.com/user-shopping-list/' + this.uniqueID + '.json', ingredients)

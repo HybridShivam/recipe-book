@@ -2,12 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {Recipe} from '../recipe.model';
 import {Ingredient} from '../../shared/ingredient.model';
 import {ShoppingListService} from '../../shopping-list/shoppingList.service';
-import {HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs';
 import {ActivatedRoute, Params} from '@angular/router';
 import {RecipeService} from '../recipe.service';
-
-// import {Pokedex} from 'pokedex-api';
 
 @Component({
   selector: 'app-recipe-detail',

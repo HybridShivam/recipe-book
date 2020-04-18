@@ -1,7 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Params, Router} from '@angular/router';
-import {ShoppingListComponent} from '../../shopping-list/shopping-list.component';
-import {ShoppingListService} from '../../shopping-list/shoppingList.service';
 import {RecipeService} from '../recipe.service';
 import {FormArray, FormControl, FormGroup, NgForm, Validators} from '@angular/forms';
 import {Recipe} from '../recipe.model';

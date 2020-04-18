@@ -1,9 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {RecipeService} from './recipe.service';
-import {Recipe} from './recipe.model';
-import {ShoppingListService} from '../shopping-list/shoppingList.service';
-import {Router} from '@angular/router';
-import {DataStorageService} from '../shared/data-storage.service';
 
 @Component({
   selector: 'app-recipes',
