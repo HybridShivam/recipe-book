@@ -19,6 +19,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {RecipeStartComponent} from './recipes/recipe-start/recipe-start.component';
 import {RecipeEditComponent} from './recipes/recipe-edit/recipe-edit.component';
 import {smoothscroll} from 'smoothscroll-polyfill';
+import {CookieService} from 'ngx-cookie-service';
 // import "@angular/compiler";
 // // MDB Angular Pro
 // import { ButtonsModule, WavesModule, DropdownModule } from 'angular-bootstrap-md';
@@ -51,7 +52,7 @@ import {smoothscroll} from 'smoothscroll-polyfill';
     // WavesModule,
     // DropdownModule.forRoot()
   ],
-  providers: [RecipeService, ShoppingListService],
+  providers: [RecipeService, ShoppingListService,CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -33,6 +33,10 @@ export class HeaderComponent {
     this.isCollapsed=true;
   }
 
+  revertToServerRecipes(){
+    this.dataStorageService.revertToServerRecipes();
+  }
+
 
   // Events for Tab Selection
   // @Output() tabClickEvent = new EventEmitter<string>();
