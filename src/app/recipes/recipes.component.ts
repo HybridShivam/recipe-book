@@ -19,4 +19,9 @@ export class RecipesComponent implements OnInit {
     //   this.currentRecipeObject = recipe;
     // });
   }
+
+  scrollToElement($element): void {
+    console.log($element);
+    $element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+  }
 }

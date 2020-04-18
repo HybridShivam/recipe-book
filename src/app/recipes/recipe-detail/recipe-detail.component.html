@@ -8,8 +8,8 @@
 </div>
 <br>
 <div class="row">
-  <div class="col-8 ">
-    <h1>{{recipeFromRecipeComponent.name}}</h1>
+  <div class="col-8">
+    <h1 style="word-wrap: break-word;">{{recipeFromRecipeComponent.name}}</h1>
   </div>
   <div class="col-4 text-right">
     <div class="btn-group dropup">
@@ -30,6 +30,7 @@
 <hr>
 <div class="row">
   <div class="col-6"><div class="font-weight-bold" #ingredients>Ingredients</div>
+    <br>
   <div class="list-group">
     <div class="list-group-item " *ngFor="let ingredient of recipeFromRecipeComponent.ingredients">
       {{ingredient.name}} ({{ingredient.amount}})
