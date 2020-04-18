@@ -24,7 +24,7 @@ export class DropdownDirective {
       setTimeout(()=>{
         this.isOpen=false;
         this.renderer.removeClass(dropdown,'show');
-        },3000);
+        },10000);
     }
   }
 }
