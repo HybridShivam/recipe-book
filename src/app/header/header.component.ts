@@ -1,4 +1,5 @@
 import {Component, EventEmitter, Output} from '@angular/core';
+import {DataStorageService} from '../shared/data-storage.service';
 
 
 @Component({
@@ -10,6 +11,15 @@ export class HeaderComponent {
 
 
   currentTab = 'recipe';
+
+  constructor(private dataStorageService: DataStorageService) {
+  }
+
+
+  storeRecipes() {
+    this.dataStorageService.storeRecipes();
+  }
+
   // Events for Tab Selection
   // @Output() tabClickEvent = new EventEmitter<string>();
 

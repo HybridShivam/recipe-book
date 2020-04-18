@@ -21,14 +21,14 @@ export class RecipeListComponent implements OnInit, OnDestroy {
     this.sub = this.recipeService.recipesChanged.subscribe(recipes => {
       this.recipes = recipes;
     });
-    this.http.post('https://recipebook-6eef7.firebaseio.com/recipes.json', this.recipes).subscribe(response => {
-      console.log(response);
-    });
-
-    this.http.get('https://pokeapi.co/api/v2/pokemon/ditto/').subscribe(pokemon => {
-      console.log(pokemon);
-      console.log(pokemon['base_experience'],pokemon['sprites']['front_default']);
-    });
+    // this.http.post('https://recipebook-6eef7.firebaseio.com/recipes.json', this.recipes).subscribe(response => {
+    //   console.log(response);
+    // });
+    //
+    // this.http.get('https://pokeapi.co/api/v2/pokemon/ditto/').subscribe(pokemon => {
+    //   console.log(pokemon);
+    //   console.log(pokemon['base_experience'],pokemon['sprites']['front_default']);
+    // });
   }
 
   ngOnDestroy(): void {
