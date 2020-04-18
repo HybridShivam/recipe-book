@@ -2,12 +2,18 @@ import {Recipe} from './recipe.model';
 import {EventEmitter} from '@angular/core';
 import {Ingredient} from '../shared/ingredient.model';
 import {Subject} from 'rxjs';
+import {Router} from '@angular/router';
 
 export class RecipeService {
 
   recipesChanged = new Subject<Recipe[]>();
 
   private recipes: Recipe[] = [];
+
+
+  constructor() {
+  }
+
   // private recipes: Recipe[] = [
   //   new Recipe('Pizza',
   //     'Pizza is a savory dish of Italian origin, consisting of a usually round, flattened base of leavened wheat-based dough topped with tomatoes, cheese, and often various other ingredients baked at a high temperature, traditionally in a wood-fired oven. A small pizza is sometimes called a pizzetta.',

@@ -2,25 +2,27 @@ import {Injectable, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {RecipeService} from '../recipes/recipe.service';
 import {Recipe} from '../recipes/recipe.model';
-import {map} from 'rxjs/operators';
+import {map, tap} from 'rxjs/operators';
 import {CookieService} from 'ngx-cookie-service';
 import {ShoppingListService} from '../shopping-list/shoppingList.service';
+import {observable} from 'rxjs';
+import {Ingredient} from './ingredient.model';
 
 @Injectable({providedIn: 'root'})
 export class DataStorageService implements OnInit {
   uniqueID: string;
-  firstTimeLogin=false;
+  firstTimeLogin = false;
 
-  constructor(private http: HttpClient, private recipeService: RecipeService,private cookieService: CookieService, private shoppingListService: ShoppingListService) {
+  constructor(private http: HttpClient, private recipeService: RecipeService, private cookieService: CookieService, private shoppingListService: ShoppingListService) {
     if (cookieService.get('id')) {
       this.uniqueID = cookieService.get('id');
-      this.firstTimeLogin=false;
+      this.firstTimeLogin = false;
     } else {
       let possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890';
       const lengthOfCode = 10;
       this.uniqueID = DataStorageService.randomGenerator(lengthOfCode, possible);
       cookieService.set('id', this.uniqueID);
-      this.firstTimeLogin=true;
+      this.firstTimeLogin = true;
     }
     this.getInitialData();
     console.log(this.uniqueID);
@@ -39,12 +41,14 @@ export class DataStorageService implements OnInit {
   }
 
 
-  getInitialData(){
-    if(this.firstTimeLogin){
+  getInitialData() {
+    if (this.firstTimeLogin) {
       this.revertToServerRecipes();
-    }
-    else {
+    } else {
+      // let observables=
       this.fetchRecipes();
+      // observables[0].subscribe();
+      // observables[1].subscribe();
     }
   }
 
@@ -63,29 +67,37 @@ export class DataStorageService implements OnInit {
 
 
   fetchRecipes() {
+    // let observables = [];
+    //Recipes
+    // observables[0] =
     this.http.get<Recipe[]>('https://recipebook-6eef7.firebaseio.com/user-recipes/' + this.uniqueID + '.json').pipe(map(recipe => {
-      if(recipe==null){recipe=[]}
+      if (recipe == null) {
+        recipe = [];
+      }
       return recipe.map(recipe => {
         return {...recipe, ingredients: recipe.ingredients ? recipe.ingredients : []};
       });
-    })).subscribe(
-      recipes => {
-        if(recipes==null){recipes=[]}
-        console.log(recipes);
-        this.recipeService.importFetchedRecipes(recipes);
+    })).subscribe(recipes => {
+      if (recipes == null) {
+        recipes = [];
       }
-    );
-    this.http.get<Recipe[]>('https://recipebook-6eef7.firebaseio.com/user-shopping-list/' + this.uniqueID + '.json').subscribe(
+      console.log(recipes);
+      this.recipeService.importFetchedRecipes(recipes);
+    });
+    //Ingredients
+    // observables[1] =
+    this.http.get<Ingredient[]>('https://recipebook-6eef7.firebaseio.com/user-shopping-list/' + this.uniqueID + '.json').subscribe(
       ingredients => {
-        if(ingredients==null){ingredients=[]}
-        console.log(ingredients);
+        if (ingredients == null) {
+          ingredients = [];
+        }
+        console.log(ingredients,this.uniqueID);
         this.shoppingListService.importIngredients(ingredients);
-      }
-    );
+      });
   }
 
 
-  saveAsServerRecipes(){
+  saveAsServerRecipes() {
     const recipes = this.recipeService.getRecipes();
     this.http.put('https://recipebook-6eef7.firebaseio.com/recipes.json', recipes).subscribe(response => {
         console.log(response);
@@ -98,32 +110,38 @@ export class DataStorageService implements OnInit {
   }
 
 
-
   revertToServerRecipes() {
     this.http.get<Recipe[]>('https://recipebook-6eef7.firebaseio.com/recipes.json').pipe(map(recipe => {
-      if(recipe==null){recipe=[]}
+      if (recipe == null) {
+        recipe = [];
+      }
       return recipe.map(recipe => {
         return {...recipe, ingredients: recipe.ingredients ? recipe.ingredients : []};
       });
     })).subscribe(
       recipes => {
-        if(recipes==null){recipes=[]}
+        if (recipes == null) {
+          recipes = [];
+        }
         console.log(recipes);
         this.recipeService.importFetchedRecipes(recipes);
         //Now Store to userRecipes
-        this.http.put('https://recipebook-6eef7.firebaseio.com/user-recipes/' + this.uniqueID + '.json', recipes).
-        subscribe(response => {}
+        this.http.put('https://recipebook-6eef7.firebaseio.com/user-recipes/' + this.uniqueID + '.json', recipes).subscribe(response => {
+          }
         );
       }
     );
-    this.http.get<Recipe[]>('https://recipebook-6eef7.firebaseio.com/shopping-list.json').subscribe(
+    this.http.get<Ingredient[]>('https://recipebook-6eef7.firebaseio.com/shopping-list.json').subscribe(
       ingredients => {
-        if(ingredients==null){ingredients=[]}
+        if (ingredients == null) {
+          ingredients = [];
+        }
         console.log(ingredients);
         this.shoppingListService.importIngredients(ingredients);
         //Now Store to userIngredients
-        this.http.put('https://recipebook-6eef7.firebaseio.com/user-shopping-list/' + this.uniqueID + '.json',ingredients)
-          .subscribe(response => {}
+        this.http.put('https://recipebook-6eef7.firebaseio.com/user-shopping-list/' + this.uniqueID + '.json', ingredients)
+          .subscribe(response => {
+            }
           );
       }
     );

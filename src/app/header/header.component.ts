@@ -11,7 +11,7 @@ export class HeaderComponent {
 
 
   currentTab = 'recipe';
-  isCollapsed=true;
+  isCollapsed = true;
 
   constructor(private dataStorageService: DataStorageService) {
   }
@@ -21,25 +21,28 @@ export class HeaderComponent {
     this.dataStorageService.storeRecipes();
   }
 
-  fetchRecipes(){
+  fetchRecipes() {
+    // let observables=
     this.dataStorageService.fetchRecipes();
+    // observables[0].subscribe();
+    // observables[1].subscribe();
   }
 
-  collapseToggle(){
-    this.isCollapsed=!this.isCollapsed;
+  collapseToggle() {
+    this.isCollapsed = !this.isCollapsed;
   }
 
-  collapse(){
-    this.isCollapsed=true;
+  collapse() {
+    this.isCollapsed = true;
   }
 
 
-  saveAsServerRecipes(){
+  saveAsServerRecipes() {
     this.dataStorageService.saveAsServerRecipes();
   }
 
 
-  revertToServerRecipes(){
+  revertToServerRecipes() {
     this.dataStorageService.revertToServerRecipes();
   }
 

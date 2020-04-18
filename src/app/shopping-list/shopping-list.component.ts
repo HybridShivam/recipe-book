@@ -2,6 +2,10 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Ingredient} from '../shared/ingredient.model';
 import {ShoppingListService} from './shoppingList.service';
 import {Subscription} from 'rxjs';
+import {Router} from '@angular/router';
+import {RecipesComponent} from '../recipes/recipes.component';
+import {RecipeService} from '../recipes/recipe.service';
+import {DataStorageService} from '../shared/data-storage.service';
 
 @Component({
   selector: 'app-shopping-list',
@@ -16,7 +20,7 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
   editingMode = false;
   modeSubscription;
 
-  constructor(private shoppingListService: ShoppingListService) {
+  constructor(private shoppingListService: ShoppingListService, private dataStorageService: DataStorageService) {
   }
 
   ngOnInit(): void {

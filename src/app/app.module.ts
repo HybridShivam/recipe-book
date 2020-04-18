@@ -20,6 +20,7 @@ import {RecipeStartComponent} from './recipes/recipe-start/recipe-start.componen
 import {RecipeEditComponent} from './recipes/recipe-edit/recipe-edit.component';
 import {smoothscroll} from 'smoothscroll-polyfill';
 import {CookieService} from 'ngx-cookie-service';
+import {DataStorageService} from './shared/data-storage.service';
 // import "@angular/compiler";
 // // MDB Angular Pro
 // import { ButtonsModule, WavesModule, DropdownModule } from 'angular-bootstrap-md';
@@ -52,7 +53,7 @@ import {CookieService} from 'ngx-cookie-service';
     // WavesModule,
     // DropdownModule.forRoot()
   ],
-  providers: [RecipeService, ShoppingListService,CookieService],
+  providers: [RecipeService, ShoppingListService, CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
