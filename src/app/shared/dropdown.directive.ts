@@ -20,6 +20,12 @@ export class DropdownDirective {
       this.renderer.removeClass(dropdown, 'show');
     }
     this.isOpen = !this.isOpen;
+    if(this.isOpen){
+      setTimeout(()=>{
+        this.isOpen=false;
+        this.renderer.removeClass(dropdown,'show');
+        },5000);
+    }
   }
 }
 // Bootstrap 3
