@@ -18,6 +18,7 @@ import {RecipeStartComponent} from './recipes/recipe-start/recipe-start.componen
 import {RecipeEditComponent} from './recipes/recipe-edit/recipe-edit.component';
 import {smoothscroll} from 'smoothscroll-polyfill';
 import {CookieService} from 'ngx-cookie-service';
+// import {APP_BASE_HREF} from '@angular/common';
 // import "@angular/compiler";
 // // MDB Angular Pro
 // import { ButtonsModule, WavesModule, DropdownModule } from 'angular-bootstrap-md';

@@ -18,7 +18,6 @@ export class RecipesComponent implements OnInit {
   }
 
   scrollToElement($element): void {
-    console.log($element);
     $element.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'nearest'});
   }
 }
