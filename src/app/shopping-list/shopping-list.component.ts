@@ -53,7 +53,7 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
         }
       }
     }
-    console.log(this.corresponsingRecipes);
+    // console.log(this.corresponsingRecipes);
 
   }
 

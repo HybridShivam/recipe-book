@@ -9,8 +9,13 @@
       </a>
     </ul>
   </div>
-  <div class="col-md-4">
-    <h4>Required In :</h4>
+  <div class="col-md-4 col-sm-12">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h3 class="myFont" *ngIf="corresponsingRecipes.length>0">Required In :</h3>
     <ul class="list-group">
       <li class="list-group-item" *ngFor="let recipe of corresponsingRecipes">{{recipe.name}}</li>
     </ul>

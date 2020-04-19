@@ -1,3 +1,15 @@
 .selectedItem{
   background-color: lightsteelblue;
 }
+.myFont{
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.list-group{
+  max-height: 300px;
+  margin-bottom: 10px;
+  overflow:scroll;
+  -webkit-overflow-scrolling: touch;
+  overflow-x:auto;
+  overflow-y: auto;
+}
