@@ -47,10 +47,10 @@
         <div class="col-12" formArrayName="ingredients">
           <div class="row" *ngFor="let ingredientCtrl of getControls(); let i = index" [formGroupName]="i" style="margin-top: 10px">
             <div class="col-7">
-              <input type="text" class="form-control" formControlName="name">
+              <input type="text" class="form-control" formControlName="name" maxlength="25">
             </div>
             <div class="col-3">
-              <input type="number" class="form-control" formControlName="amount">
+              <input type="text" class="form-control" formControlName="amount" maxlength="3" onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57">
             </div>
             <div class="col-0.5 text-right" style="margin-left: 0px">
               <button type="button" class="btn btn-danger btn-sm" (click)="deleteIngredient(i)">X</button>

@@ -16,6 +16,7 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
   editingItemIndex: number;
   editedIngredient: Ingredient;
   isEmpty=false;
+  @Output('clearRequired') clearRequired=new EventEmitter();
 
   constructor(private shoppingListService: ShoppingListService) {
   }
@@ -52,12 +53,14 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
     }
     form.reset();
     this.isEmpty=this.shoppingListService.ingredients.length == 0;
+    this.clearRequired.emit();
   }
 
   onClear() {
     this.editingMode = false;
     this.shoppingListService.modeEmitter.next(this.editingMode);
     this.form.reset();
+    this.clearRequired.emit();
   }
 
   onDelete() {
@@ -66,7 +69,10 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
     this.editingMode = false;
     this.shoppingListService.modeEmitter.next(this.editingMode);
     this.form.reset();
+    this.clearRequired.emit();
   }
+
+
 
 
 }

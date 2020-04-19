@@ -43,8 +43,8 @@ export class RecipeEditComponent implements OnInit {
         for (let ingredient of recipe.ingredients) {
           recipeIngredients.push(
             new FormGroup({
-              'name': new FormControl(ingredient.name, [Validators.required,Validators.maxLength(45)]),
-              'amount': new FormControl(ingredient.amount, [Validators.required,Validators.maxLength(4), Validators.pattern(/^[1-9]+[0-9]*$/)])
+              'name': new FormControl(ingredient.name, [Validators.required,Validators.maxLength(25)]),
+              'amount': new FormControl(+ingredient.amount, [Validators.required,Validators.maxLength(3), Validators.pattern(/^[1-9]+[0-9]*$/)])
             })
           );
 

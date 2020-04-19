@@ -20,7 +20,7 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
   private subscription: Subscription;
   editingMode = false;
   modeSubscription;
-  corresponsingRecipes: Recipe[]=[];
+  corresponsingRecipes: Recipe[] = [];
 
   constructor(private shoppingListService: ShoppingListService, private dataStorageService: DataStorageService, private recipeService: RecipeService) {
   }
@@ -43,18 +43,20 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
   onEdit(index: number) {
     this.shoppingListService.editingModeSubject.next(index);
     this.editingItemIndex = index;
-    let recipes=this.recipeService.getRecipes();
-    this.corresponsingRecipes=[];
-    for(let recipe of recipes){
-      for(let ingredient of recipe.ingredients){
-        if(ingredient.name===this.ingredients[this.editingItemIndex].name){
+    let recipes = this.recipeService.getRecipes();
+    this.corresponsingRecipes = [];
+    for (let recipe of recipes) {
+      for (let ingredient of recipe.ingredients) {
+        if (ingredient.name === this.ingredients[this.editingItemIndex].name) {
           this.corresponsingRecipes.push(recipe);
           break;
         }
       }
     }
-    // console.log(this.corresponsingRecipes);
+  }
 
+  resetCorrespondingRecipes(){
+    this.corresponsingRecipes=[];
   }
 
 }
