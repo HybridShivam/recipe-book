@@ -6,6 +6,7 @@ import {Router} from '@angular/router';
 import {RecipesComponent} from '../recipes/recipes.component';
 import {RecipeService} from '../recipes/recipe.service';
 import {DataStorageService} from '../shared/data-storage.service';
+import {Recipe} from '../recipes/recipe.model';
 
 @Component({
   selector: 'app-shopping-list',
@@ -19,8 +20,9 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
   private subscription: Subscription;
   editingMode = false;
   modeSubscription;
+  corresponsingRecipes: Recipe[]=[];
 
-  constructor(private shoppingListService: ShoppingListService, private dataStorageService: DataStorageService) {
+  constructor(private shoppingListService: ShoppingListService, private dataStorageService: DataStorageService, private recipeService: RecipeService) {
   }
 
   ngOnInit(): void {
@@ -41,6 +43,18 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
   onEdit(index: number) {
     this.shoppingListService.editingModeSubject.next(index);
     this.editingItemIndex = index;
+    let recipes=this.recipeService.getRecipes();
+    this.corresponsingRecipes=[];
+    for(let recipe of recipes){
+      for(let ingredient of recipe.ingredients){
+        if(ingredient.name===this.ingredients[this.editingItemIndex].name){
+          this.corresponsingRecipes.push(recipe);
+          break;
+        }
+      }
+    }
+    console.log(this.corresponsingRecipes);
+
   }
 
 }
