@@ -25,7 +25,7 @@ export class DataStorageService implements OnInit {
       this.firstTimeLogin = true;
     }
     this.getInitialData();
-    console.log("Unique ID" +this.uniqueID);
+    console.log("Unique ID : " +this.uniqueID);
   }
 
   ngOnInit(): void {

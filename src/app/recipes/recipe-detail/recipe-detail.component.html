@@ -3,20 +3,23 @@
 <br>
 <div class="row">
   <div class="col-12">
-    <img src="{{recipeFromRecipeComponent.imagePath}}" alt="" class="img-fluid rounded shadow" (click)="scrollToElement(recipe)">
+    <img src="{{recipeFromRecipeComponent.imagePath}}" alt="" class="img-fluid rounded shadow"
+         (click)="scrollToElement(recipe)">
   </div>
 </div>
 <br>
-<div class="row">
-  <div class="col-8">
+<div class="row detailsFont" style="font-size: xx-large">
+  <div class="col-7">
     <h1 style="word-wrap: break-word;">{{recipeFromRecipeComponent.name}}</h1>
   </div>
-  <div class="col-4 text-right">
+  <div class="col-5 text-right">
     <div class="btn-group dropup">
-      <button type="button" class="btn btn-primary dropdown-toggle" appDropdown style="white-space: break-spaces">Manage Recipe <span class="caret"></span>
+      <button type="button" class="btn btn-primary dropdown-toggle" appDropdown style="white-space: break-spaces">Manage<span
+        class="caret"></span>
       </button>
       <div class="dropdown-menu dropdown-menu-right" data-placement="auto">
-        <a class="dropdown-item" (click)="goToShopping(recipeFromRecipeComponent.ingredients)" style="cursor: pointer" routerLink="/shopping-list">Add To Shopping List</a>
+        <a class="dropdown-item" (click)="goToShopping(recipeFromRecipeComponent.ingredients)" style="cursor: pointer"
+           routerLink="/shopping-list">Add To Shopping List</a>
         <a class="dropdown-item" routerLink="edit" href="#">Edit Recipe</a>
         <a class="dropdown-item" (click)="deleteRecipe()" routerLink="/recipes">Delete Recipe</a>
       </div>
@@ -24,17 +27,42 @@
   </div>
 </div>
 <hr>
-<div class="row">
+<div class="row detailsFont" style="font-size: x-large">
   <div class="col-12">{{recipeFromRecipeComponent.desc}}</div>
 </div>
 <hr>
 <div class="row">
-  <div class="col-6"><div class="font-weight-bold" #ingredients>Ingredients</div>
-    <br>
-  <div class="list-group">
-    <div class="list-group-item " *ngFor="let ingredient of recipeFromRecipeComponent.ingredients">
-      {{ingredient.name}} ({{ingredient.amount}})
-    </div>
+  <div class="col-12">
+    <table class="table table-striped table-dark rounded">
+      <thead>
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col">Amount</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let ingredient of recipeFromRecipeComponent.ingredients; let i =index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{ingredient.name}}</td>
+        <td>{{ingredient.amount}}</td>
+      </tr>
+      </tbody>
+    </table>
   </div>
-  </div>
+  <!--  <div class="col-9"><div class="font-weight-bold" #ingredients>Ingredients</div>-->
+  <!--    <br>-->
+  <!--  <div class="list-group">-->
+  <!--    <div class="list-group-item " *ngFor="let ingredient of recipeFromRecipeComponent.ingredients">-->
+  <!--      {{ingredient.name}}-->
+  <!--    </div>-->
+  <!--  </div>-->
+  <!--    <div class="col-3">-->
+  <!--      <div class="list-group">-->
+  <!--        <div class="list-group-item " *ngFor="let ingredient of recipeFromRecipeComponent.ingredients">-->
+  <!--          ({{ingredient.amount}})-->
+  <!--        </div>-->
+  <!--      </div>-->
+  <!--    </div>-->
+  <!--  </div>-->
 </div>

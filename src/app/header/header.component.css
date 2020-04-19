@@ -1,12 +1,20 @@
-.selectedTab {
-  background-color: lightsteelblue;
-}
+/*.active {*/
+/*  font-weight: bolder;*/
+/*}*/
 .dropdown-toggle::after {
   display: none;
 }
 
+.coolFont{
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: x-large;
+}
+
+
 .navbar-brand{
   color: black;
+  font-family: 'Pacifico', cursive;
+  font-size: xx-large;
 }
 @media (max-width: 767px) {
   .navbar-toggleable-sm {
