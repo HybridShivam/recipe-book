@@ -5,6 +5,8 @@
     </button>
   <div class="navbar-collapse dropdown-toggle coolFont" [ngClass]="{collapse: isCollapsed}" id="nav">
     <ul class="nav navbar-nav">
+      <li class="nav-item"><a href="http://hybridshivam.tech" class="nav-link">Home</a>
+      </li>
       <li class="nav-item"><a class="nav-link" routerLink="/recipes" routerLinkActive="active" (click)="collapse()">Recipes</a>
       </li>
       <li class="nav-item"><a class="nav-link" routerLink="/shopping-list" routerLinkActive="active" (click)="collapse()">Shopping List</a>
@@ -15,13 +17,13 @@
         <a class="nav-link btn dropdown-toggle"
            id="manageMenu" data-toggle="dropdown" data-target="manage" aria-haspopup="true"
            aria-expanded="true" appDropdown style="color: darkred">Save / Load</a>
-        <div class="dropdown-menu dropdown-menu-right"
+        <div class="dropdown-menu dropdown-menu-right myShadow"
              aria-labelledby="manageMenu" id="manage">
-          <a class="dropdown-item" style="cursor: pointer" (click)="storeRecipes();collapse()">Save Personal Data</a>
-          <a class="dropdown-item" style="cursor: pointer" (click)="fetchRecipes();collapse()" routerLink="/">Load Personal Data</a>
+          <a class="dropdown-item highLightMeOnHover" style="cursor: pointer" (click)="storeRecipes();collapse()">Save Personal Data</a>
+          <a class="dropdown-item highLightMeOnHover" style="cursor: pointer" (click)="fetchRecipes();collapse()" routerLink="/">Load Personal Data</a>
           <hr>
-          <a class="dropdown-item" style="cursor: pointer" (click)="saveAsServerRecipes();collapse()" routerLink="/">Save as Server's Original Data</a>
-          <a class="dropdown-item alert-danger" style="cursor: pointer" (click)="revertToServerRecipes();collapse()" routerLink="/">Revert to Server's Original Data</a>
+<!--          <a class="dropdown-item highLightMeOnHover" style="cursor: pointer" (click)="saveAsServerRecipes();collapse()" routerLink="/">Save as Server's Original Data</a>-->
+          <a class="dropdown-item alert-danger highLightMeOnHover" style="cursor: pointer" (click)="revertToServerRecipes();collapse()" routerLink="/">Revert to Server's Original Data</a>
         </div>
       </li>
     </ul>

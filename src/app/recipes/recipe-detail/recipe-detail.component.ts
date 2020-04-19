@@ -34,9 +34,18 @@ export class RecipeDetailComponent implements OnInit {
     this.recipeService.deleteRecipe(this.id);
   }
 
-  scrollToElement($element): void {
-    console.log($element);
-    $element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+  // scrollToElement($element): void {
+  //   $element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+  // }
+  scrollToElement(): void {
+    // $element.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'nearest'});
+    var headerOffset = 87;
+    // var elementPosition = $element.getBoundingClientRect().top;
+    // var offsetPosition = elementPosition - headerOffset;
+    window.scrollTo({
+      top: headerOffset,
+      behavior: "smooth"
+    });
   }
 
 }

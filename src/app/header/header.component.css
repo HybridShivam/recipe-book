@@ -4,7 +4,11 @@
 .dropdown-toggle::after {
   display: none;
 }
-
+.myShadow{
+  -webkit-box-shadow: 0px 0px 60px 23px rgba(0,0,0,0.15);
+  -moz-box-shadow: 0px 0px 60px 23px rgba(0,0,0,0.15);
+  box-shadow: 0px 0px 60px 23px rgba(0,0,0,0.15);
+}
 /*navBar Shadow*/
 .navbar {
   /*-webkit-box-shadow: 0 8px 6px -6px #999;*/
@@ -26,7 +30,25 @@
   color: black;
   font-family: 'Pacifico', cursive;
   font-size: xx-large;
+  -webkit-transition: color 1s; /* For Safari 3.0 to 6.0 */
+  transition: color 1s; /* For modern browsers */
 }
+
+.navbar-brand:hover {
+  color: #75590c;
+}
+
+.highLightMeOnHover{
+  /*-webkit-transition: color,background-color 0.1s; !* For Safari 3.0 to 6.0 *!*/
+  /*transition: color,background-color 0.1s; !* For modern browsers *!*/
+}
+
+.highLightMeOnHover:hover{
+  background-color: black;
+  color: white;
+}
+
+
 @media (max-width: 767px) {
   .navbar-toggleable-sm {
     clear: both;

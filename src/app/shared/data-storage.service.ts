@@ -5,13 +5,14 @@ import {Recipe} from '../recipes/recipe.model';
 import {map, tap} from 'rxjs/operators';
 import {CookieService} from 'ngx-cookie-service';
 import {ShoppingListService} from '../shopping-list/shoppingList.service';
-import {observable} from 'rxjs';
+import {observable, Subject} from 'rxjs';
 import {Ingredient} from './ingredient.model';
 
 @Injectable({providedIn: 'root'})
 export class DataStorageService implements OnInit {
   uniqueID: string;
   firstTimeLogin = false;
+  // dataFetched=new Subject<boolean>();
 
   constructor(private http: HttpClient, private recipeService: RecipeService, private cookieService: CookieService, private shoppingListService: ShoppingListService) {
     if (cookieService.get('id')) {
@@ -25,7 +26,7 @@ export class DataStorageService implements OnInit {
       this.firstTimeLogin = true;
     }
     this.getInitialData();
-    console.log("Unique ID : " +this.uniqueID);
+    // console.log("Unique ID : " +this.uniqueID);
   }
 
   ngOnInit(): void {
@@ -42,6 +43,7 @@ export class DataStorageService implements OnInit {
 
 
   getInitialData() {
+    // this.dataFetched.next(false);
     if (this.firstTimeLogin) {
       this.revertToServerRecipes();
     } else {
@@ -56,11 +58,11 @@ export class DataStorageService implements OnInit {
   storeRecipes() {
     const recipes = this.recipeService.getRecipes();
     this.http.put('https://recipebook-6eef7.firebaseio.com/user-recipes/' + this.uniqueID + '.json', recipes).subscribe(response => {
-        console.log(response);
+        // console.log(response);
       }
     );
     this.http.put('https://recipebook-6eef7.firebaseio.com/user-shopping-list/' + this.uniqueID + '.json', this.shoppingListService.ingredients).subscribe(response => {
-        console.log(response);
+        // console.log(response);
       }
     );
   }
@@ -81,8 +83,9 @@ export class DataStorageService implements OnInit {
       if (recipes == null) {
         recipes = [];
       }
-      console.log("Fetched",recipes);
+      // console.log("Fetched",recipes);
       this.recipeService.importFetchedRecipes(recipes);
+      // this.dataFetched.next(true);
     });
     //Ingredients
     // observables[1] =
@@ -91,8 +94,9 @@ export class DataStorageService implements OnInit {
         if (ingredients == null) {
           ingredients = [];
         }
-        console.log("Fetched",ingredients);
+        // console.log("Fetched",ingredients);
         this.shoppingListService.importIngredients(ingredients);
+        // this.dataFetched.next(true);
       });
   }
 
@@ -100,11 +104,11 @@ export class DataStorageService implements OnInit {
   saveAsServerRecipes() {
     const recipes = this.recipeService.getRecipes();
     this.http.put('https://recipebook-6eef7.firebaseio.com/recipes.json', recipes).subscribe(response => {
-        console.log(response);
+        // console.log(response);
       }
     );
     this.http.put('https://recipebook-6eef7.firebaseio.com/shopping-list.json', this.shoppingListService.ingredients).subscribe(response => {
-        console.log(response);
+        // console.log(response);
       }
     );
   }
@@ -125,6 +129,7 @@ export class DataStorageService implements OnInit {
         }
         console.log("Reverted to",recipes);
         this.recipeService.importFetchedRecipes(recipes);
+        // this.dataFetched.next(true);
         //Now Store to userRecipes
         this.http.put('https://recipebook-6eef7.firebaseio.com/user-recipes/' + this.uniqueID + '.json', recipes).subscribe(response => {
           }
@@ -136,8 +141,9 @@ export class DataStorageService implements OnInit {
         if (ingredients == null) {
           ingredients = [];
         }
-        console.log("Reverted to",ingredients);
+        // console.log("Reverted to",ingredients);
         this.shoppingListService.importIngredients(ingredients);
+        // this.dataFetched.next(true);
         //Now Store to userIngredients
         this.http.put('https://recipebook-6eef7.firebaseio.com/user-shopping-list/' + this.uniqueID + '.json', ingredients)
           .subscribe(response => {
