@@ -4,7 +4,16 @@
 .dropdown-toggle::after {
   display: none;
 }
-@media (min-width: 768px) {
+
+.hrFromSaveAndLoad{
+  display: none;
+}
+
+#header{
+  padding-bottom: 3px ;
+  padding-top: 0;
+}
+@media (min-width: 576px) {
   .myShadow{
     -webkit-box-shadow: 0px 0px 60px 23px rgba(0,0,0,0.15);
     -moz-box-shadow: 0px 0px 60px 23px rgba(0,0,0,0.15);
@@ -23,41 +32,14 @@
   /* the rest of your styling */
 }
 
-@media (max-width: 767px) {
-  .smallerNav{
-    font-size: smaller;
-    padding: 0;
-  }
-
-  .navbar-brand{
-    color: black;
-    font-family: 'Pacifico', cursive;
-    font-size: xx-large;
-    -webkit-transition: color 1s; /* For Safari 3.0 to 6.0 */
-    transition: color 1s; /* For modern browsers */
-  }
-  .navbar-toggler-icon{
-    max-height: 25px;
-    max-width: 25px;
-  }
-  .navbar-nav .dropdown-menu{
-    border: none;
-    background: none;
-  }
-  .dropdown-item .alert-danger{
-    background-color: white;
-  }
-  .saveLoad{
-    font-size: medium;
-    background-color: transparent;
-  }
+.collapseButton:focus{
+  outline: none;
 }
 
 @media (max-width: 767px) {
 
 
 }
-
 
 
 
@@ -77,14 +59,66 @@
   transition: color 1s; /* For modern browsers */
 }
 
-.navbar-brand:hover {
-  color: #75590c;
-}
-
 .highLightMeOnHover:hover{
   background-color: black;
   color: white;
 }
+
+
+@media (max-width: 575px) {
+  .navbar-brand{
+    font-size: large;
+  }
+  #header{
+    padding-bottom: 2px ;
+    padding-top: 2px;
+  }
+  .navbar-nav .dropdown-menu{
+    border: none;
+    background: none;
+  }
+  .dropdown-item .alert-danger{
+    background-color: white;
+  }
+  .saveLoad{
+    font-size: medium;
+    background-color: transparent;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .smallerNav{
+    font-size: smaller;
+    padding: 0;
+  }
+
+  .navbar-toggler{
+    max-height: 35px;
+    max-width: 35px;
+    padding: 0;
+  }
+  .navbar-toggler-icon{
+    max-height: 30px;
+    max-width: 30px;
+  }
+  .hideHROnSmall{
+    display: none;
+  }
+  .highLightMeOnHover:hover{
+    background-color: transparent;
+    color: black;
+  }
+
+
+}
+
+
+.navbar-brand:hover {
+  color: #75590c;
+}
+
+
 
 
 
