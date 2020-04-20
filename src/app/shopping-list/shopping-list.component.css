@@ -34,9 +34,11 @@
 .fade li {
   transition: all 1.0s ease-out;
   opacity: 0;
+  height: 1px;
   /*height: 2em;*/
 }
 .fade li.show {
+  height: auto;
   opacity: 1;
   transition: all 0.25s ease-out;
 }
