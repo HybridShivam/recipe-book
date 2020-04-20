@@ -18,6 +18,7 @@ import {RecipeStartComponent} from './recipes/recipe-start/recipe-start.componen
 import {RecipeEditComponent} from './recipes/recipe-edit/recipe-edit.component';
 import {smoothscroll} from 'smoothscroll-polyfill';
 import {CookieService} from 'ngx-cookie-service';
+import {AnimateOnScrollModule} from 'ng2-animate-on-scroll';
 
 // import {APP_BASE_HREF} from '@angular/common';
 // import "@angular/compiler";
@@ -46,6 +47,7 @@ import {CookieService} from 'ngx-cookie-service';
     ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule,
+    AnimateOnScrollModule.forRoot()
     // ButtonsModule,
     // WavesModule,
     // DropdownModule.forRoot()

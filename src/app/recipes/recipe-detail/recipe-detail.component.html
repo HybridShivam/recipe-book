@@ -20,7 +20,7 @@
         <a class="dropdown-item" (click)="goToShopping(recipeFromRecipeComponent.ingredients)" style="cursor: pointer"
            routerLink="/shopping-list">Add To Shopping List</a>
         <a class="dropdown-item" routerLink="edit" (click)="scrollFromEdit(topOfRecipeDetails)">Edit Recipe</a>
-        <a class="dropdown-item" (click)="deleteRecipe();scrollTo()" routerLink="/recipes">Delete Recipe</a>
+        <a class="dropdown-item" (click)="deleteRecipe();deleteScrollTo()" routerLink="/recipes">Delete Recipe</a>
       </div>
     </div>
   </div>

@@ -12,13 +12,13 @@ export class RecipesComponent implements OnInit,OnDestroy {
   // mobile = false;
   // loaded=false;
   // loadingSubscription;
-  @ViewChild('list',{static:true}) list: ElementRef;
+  // @ViewChild('list',{static:true}) list: ElementRef;
 
-  constructor(private dataStorageService: DataStorageService,private elementRef:ElementRef) {
+  constructor(private dataStorageService: DataStorageService) {
   }
 
   ngOnInit(): void {
-    this.scrollToElement(this.list.nativeElement);
+    // this.scrollToElement(this.list.nativeElement);
     // this.mobile = screen.width <= 767;
     // this.loadingSubscription=this.dataStorageService.dataFetched.subscribe(value =>{
     //   this.loaded=value;

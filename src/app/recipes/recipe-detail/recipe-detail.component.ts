@@ -52,6 +52,19 @@ export class RecipeDetailComponent implements OnInit {
     });
   }
 
+  deleteScrollTo(): void {
+    // $element.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'nearest'});
+    if(screen.width>767){
+    var headerOffset = 87;
+    // var elementPosition = $element.getBoundingClientRect().top;
+    // var offsetPosition = elementPosition - headerOffset;
+    window.scrollTo({
+      top: headerOffset,
+      behavior: "smooth"
+    });}
+  }
+
+
   scrollToElement($element): void {
     $element.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'nearest'});
   }

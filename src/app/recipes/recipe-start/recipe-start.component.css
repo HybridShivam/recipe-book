@@ -35,11 +35,11 @@
     stroke: white;
   }
 }
-html,
-body {
-  height: 100%;
-  background: #f2f2f2;
-}
+/*html,*/
+/*body {*/
+/*  height: 100%;*/
+/*  background: #f2f2f2;*/
+/*}*/
 svg {
   position: absolute;
   top: 0;
@@ -56,4 +56,10 @@ svg {
   stroke-dasharray: 10000;
   -webkit-animation: drawIn 2.5s 1s ease-in both;
   animation: drawIn 2.5s 1s ease-in both;
+  animation-play-state: paused;
+  /*animation-name: play;*/
+}
+
+.animateSvg{
+  animation-play-state: running;
 }

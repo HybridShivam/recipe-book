@@ -21,6 +21,7 @@
     "@angular/router": "~9.1.0",
     "angular-bootstrap-md": "^9.1.0",
     "bootstrap": "^4.4.1",
+    "ng2-animate-on-scroll": "^2.0.0",
     "ngx-cookie-service": "^3.0.4",
     "pokedex-api": "^1.1.2",
     "rxjs": "~6.5.4",
