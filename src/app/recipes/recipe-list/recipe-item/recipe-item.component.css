@@ -1,12 +1,11 @@
 @media (max-width: 767px) {
   .list-group-item-heading{
     font-size: medium;
+    font-weight: bold;
     margin-bottom: 0;
   }
   .list-group-item-text{
     font-size: smaller;
     margin-bottom: 0;
   }
-
-
 }

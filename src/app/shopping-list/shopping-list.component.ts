@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, ElementRef, OnDestroy, OnInit, Renderer2, ViewChild} from '@angular/core';
 import {Ingredient} from '../shared/ingredient.model';
 import {ShoppingListService} from './shoppingList.service';
 import {Subscription} from 'rxjs';
@@ -22,8 +22,9 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
   modeSubscription;
   corresponsingRecipes: Recipe[] = [];
   mobile = false;
+  showCorresponsingRecipes = false;
 
-  constructor(private shoppingListService: ShoppingListService, private dataStorageService: DataStorageService, private recipeService: RecipeService) {
+  constructor(private renderer2: Renderer2, private shoppingListService: ShoppingListService, private dataStorageService: DataStorageService, private recipeService: RecipeService) {
   }
 
 
@@ -44,22 +45,26 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
   }
 
   onEdit(index: number) {
+    this.showCorresponsingRecipes = false;
     this.shoppingListService.editingModeSubject.next(index);
     this.editingItemIndex = index;
     let recipes = this.recipeService.getRecipes();
-    this.corresponsingRecipes = [];
-    for (let recipe of recipes) {
-      for (let ingredient of recipe.ingredients) {
-        if (ingredient.name === this.ingredients[this.editingItemIndex].name) {
-          this.corresponsingRecipes.push(recipe);
-          break;
+    setTimeout(() => {
+      this.corresponsingRecipes = [];
+      for (let recipe of recipes) {
+        for (let ingredient of recipe.ingredients) {
+          if (ingredient.name === this.ingredients[this.editingItemIndex].name) {
+            this.corresponsingRecipes.push(recipe);
+            break;
+          }
         }
       }
-    }
+      this.showCorresponsingRecipes = true;
+    }, 250);
   }
 
-  resetCorrespondingRecipes(){
-    this.corresponsingRecipes=[];
+  resetCorrespondingRecipes() {
+    this.corresponsingRecipes = [];
   }
 
 }

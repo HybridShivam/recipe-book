@@ -5,12 +5,27 @@
   -webkit-overflow-scrolling: touch;
   overflow-x:auto;
   overflow-y: auto;
+  /*border: black 2px;*/
 }
+
+/*.borderDesign{*/
+/*  max-height: 81vh;*/
+/*  width: max-content;*/
+/*  border-style: solid;*/
+/*  border-width: 5px;*/
+/*  padding: 0;*/
+/*  z-index: 5;*/
+/*}*/
+
+
 @media (min-width: 768px) {
   .myShadow {
-    -webkit-box-shadow: 0px 0px 173px 45px rgba(0, 0, 0, 0.15);
-    -moz-box-shadow: 0px 0px 173px 45px rgba(0, 0, 0, 0.15);
-    box-shadow: 0px 0px 173px 45px rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: 0px 0px 0px 1px rgba(0,0,0,1);
+    -moz-box-shadow: 0px 0px 0px 1px rgba(0,0,0,1);
+    box-shadow: 0px 0px 0px 1px rgba(0,0,0,1);
+    /*-webkit-box-shadow: 0px 0px 173px 45px rgba(0, 0, 0, 0.15);*/
+    /*-moz-box-shadow: 0px 0px 173px 45px rgba(0, 0, 0, 0.15);*/
+    /*box-shadow: 0px 0px 173px 45px rgba(0, 0, 0, 0.15);*/
     /*border: 1px black;*/
   }
 }
@@ -21,5 +36,14 @@
   }
   .recipeListRow{
     margin-bottom: 20px;
+  }
+  .myShadow {
+    -webkit-box-shadow: 0px 0px 0px 1px rgba(0,0,0,1);
+    -moz-box-shadow: 0px 0px 0px 1px rgba(0,0,0,1);
+    box-shadow: 0px 0px 0px 1px rgba(0,0,0,1);
+    /*-webkit-box-shadow: 0px 0px 173px 45px rgba(0, 0, 0, 0.15);*/
+    /*-moz-box-shadow: 0px 0px 173px 45px rgba(0, 0, 0, 0.15);*/
+    /*box-shadow: 0px 0px 173px 45px rgba(0, 0, 0, 0.15);*/
+    /*border: 1px black;*/
   }
 }

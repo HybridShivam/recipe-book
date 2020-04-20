@@ -28,6 +28,10 @@ export class RecipeDetailComponent implements OnInit {
 
   goToShopping(ingredient: Ingredient[]) {
     this.shoppingListService.ingredients.push(...ingredient);
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
   }
 
   deleteRecipe(){
@@ -37,7 +41,7 @@ export class RecipeDetailComponent implements OnInit {
   // scrollToElement($element): void {
   //   $element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
   // }
-  scrollToElement(): void {
+  scrollTo(): void {
     // $element.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'nearest'});
     var headerOffset = 87;
     // var elementPosition = $element.getBoundingClientRect().top;
@@ -46,6 +50,19 @@ export class RecipeDetailComponent implements OnInit {
       top: headerOffset,
       behavior: "smooth"
     });
+  }
+
+  scrollToElement($element): void {
+    $element.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'nearest'});
+  }
+
+  scrollFromEdit($element){
+    if(screen.width<=767){
+      this.scrollToElement($element);
+    }
+    else {
+      this.scrollTo();
+    }
   }
 
 }

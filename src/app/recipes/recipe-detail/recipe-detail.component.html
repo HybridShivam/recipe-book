@@ -1,15 +1,15 @@
-<br>
+<br #topOfRecipeDetails>
 <br>
 <br>
 <div class="row imageRow">
   <div class="col-12">
-    <img src="{{recipeFromRecipeComponent.imagePath}}" alt="" class="img-fluid rounded shadow"
-         (click)="scrollToElement()">
+    <img src="{{recipeFromRecipeComponent.imagePath}}" alt="" class="img-fluid rounded imageShadow"
+         (click)="scrollTo()">
   </div>
 </div>
-<div class="row detailsFont" style="text-size: xxlarge;">
+<div class="row detailsFont">
   <div class="col-7" style="height: max-content">
-    <h1 style="word-wrap: break-word; vertical-align: middle" class="makeHeadingSmaller">{{recipeFromRecipeComponent.name}}</h1>
+    <h1 style="font-family: 'Roboto', sans-serif; font-weight: bold; word-wrap: break-word; vertical-align: middle" class="makeHeadingSmaller">{{recipeFromRecipeComponent.name}}</h1>
   </div>
   <div class="col-5 text-right">
     <div class="btn-group dropup"  style="height: max-content">
@@ -19,32 +19,32 @@
       <div class="dropdown-menu dropdown-menu-right" data-placement="auto">
         <a class="dropdown-item" (click)="goToShopping(recipeFromRecipeComponent.ingredients)" style="cursor: pointer"
            routerLink="/shopping-list">Add To Shopping List</a>
-        <a class="dropdown-item" routerLink="edit" href="#">Edit Recipe</a>
-        <a class="dropdown-item" (click)="deleteRecipe()" routerLink="/recipes">Delete Recipe</a>
+        <a class="dropdown-item" routerLink="edit" (click)="scrollFromEdit(topOfRecipeDetails)">Edit Recipe</a>
+        <a class="dropdown-item" (click)="deleteRecipe();scrollTo()" routerLink="/recipes">Delete Recipe</a>
       </div>
     </div>
   </div>
 </div>
 
 <div class="row detailsFont" style="font-size: large;word-wrap: break-word;">
-  <div class="col-12 makeMeSmall">{{recipeFromRecipeComponent.desc}}</div>
+  <div class="col-12 makeMeSmall" style="font-family: 'Hind Guntur', sans-serif;">{{recipeFromRecipeComponent.desc}}</div>
 </div>
-<hr>
+<!--<hr>-->
 <div class="row" *ngIf="recipeFromRecipeComponent.ingredients.length>0">
   <div class="col-12 table-responsive">
-    <table class="table table-striped table-dark rounded ingredientsTable">
+    <table class="table table-striped table-dark ingredientsTable table-sm">
       <thead>
       <tr>
-        <th scope="col"></th>
-        <th scope="col">Ingredient</th>
-        <th scope="col">Amount</th>
+        <th scope="col" class="makeMeSmall"></th>
+        <th scope="col" class="makeMeSmall">Ingredient</th>
+        <th scope="col" class="makeMeSmall">Amount</th>
       </tr>
       </thead>
       <tbody>
       <tr *ngFor="let ingredient of recipeFromRecipeComponent.ingredients; let i =index">
-        <th scope="row">{{i+1}}</th>
-        <td style="word-wrap: break-word;min-width: 160px;max-width: 160px;">{{ingredient.name}}</td>
-        <td>{{ingredient.amount}}</td>
+        <th scope="row" class="makeMeSmall" style="text-align: end">{{i+1}}</th>
+        <td style="word-wrap: break-word;min-width: 160px;max-width: 160px;" class="makeMeSmall">{{ingredient.name}}</td>
+        <td class="makeMeSmall">{{ingredient.amount}}</td>
       </tr>
       </tbody>
     </table>

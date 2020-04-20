@@ -15,6 +15,7 @@
 
   <!--  fontAwesome-->
   <script src="https://use.fontawesome.com/a5232af2dd.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Guntur:wght@300;400&family=Roboto:wght@300&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
   <link
@@ -25,6 +26,45 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&display=swap"
     rel="stylesheet">
+<!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+<!--  <script>-->
+<!--    // Select all links with hashes-->
+<!--    $('a[href*="#"]')-->
+<!--      // Remove links that don't actually link to anything-->
+<!--      .not('[href="#"]')-->
+<!--      .not('[href="#0"]')-->
+<!--      .click(function(event) {-->
+<!--        // On-page links-->
+<!--        if (-->
+<!--          location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')-->
+<!--          &&-->
+<!--          location.hostname == this.hostname-->
+<!--        ) {-->
+<!--          // Figure out element to scroll to-->
+<!--          var target = $(this.hash);-->
+<!--          target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');-->
+<!--          // Does a scroll target exist?-->
+<!--          if (target.length) {-->
+<!--            // Only prevent default if animation is actually gonna happen-->
+<!--            event.preventDefault();-->
+<!--            $('html, body').animate({-->
+<!--              scrollTop: target.offset().top-->
+<!--            }, 1000, function() {-->
+<!--              // Callback after animation-->
+<!--              // Must change focus!-->
+<!--              var $target = $(target);-->
+<!--              $target.focus();-->
+<!--              if ($target.is(":focus")) { // Checking if the target was focused-->
+<!--                return false;-->
+<!--              } else {-->
+<!--                $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable-->
+<!--                $target.focus(); // Set focus again-->
+<!--              };-->
+<!--            });-->
+<!--          }-->
+<!--        }-->
+<!--      });-->
+<!--  </script>-->
 </head>
 <body>
 <app-root>
@@ -58,7 +98,7 @@
         <p>All data on this site is solely for representational purpose.<br>
         </p>
         <p><i class="fa fa-heart"></i> <a href="http://hybridshivam.tech/">Hybrid</a> <i class="fa fa-heart"></i></p>
-        <p class="h6">This site is currently under development by <a href="http://hybridshivam.tech/">HybridShivam.</a>
+        <p class="h6" style="font-weight: bold">This site is currently under development by <a href="http://hybridshivam.tech/">HybridShivam.</a>
         </p>
       </div>
     </div>

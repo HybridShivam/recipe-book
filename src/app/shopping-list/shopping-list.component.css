@@ -31,6 +31,24 @@
   }
 }
 
+.fade li {
+  transition: all 1.0s ease-out;
+  opacity: 0;
+  /*height: 2em;*/
+}
+.fade li.show {
+  opacity: 1;
+  transition: all 0.25s ease-out;
+}
+/*.slide-fade li {*/
+/*  transition: all 0.4s ease-out;*/
+/*  opacity: 0;*/
+/*}*/
+/*.slide-fade li.show {*/
+/*  opacity: 1;*/
+/*}*/
+
+
 @media (max-width: 767px) {
   .myFont{
     font-size: smaller;

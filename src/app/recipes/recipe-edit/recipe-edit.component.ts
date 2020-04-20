@@ -14,6 +14,7 @@ export class RecipeEditComponent implements OnInit {
   id: number;
   editMode = false;
   recipeForm: FormGroup;
+  noOfIngredients;
 
   constructor(private route: ActivatedRoute, private recipeService: RecipeService, private router: Router) {
   }
@@ -50,6 +51,7 @@ export class RecipeEditComponent implements OnInit {
 
         }
       }
+      this.noOfIngredients=recipe.ingredients.length;
     }
     this.recipeForm = new FormGroup({
       'name': new FormControl(recipeName, [Validators.required,Validators.maxLength(45)]),
@@ -89,11 +91,24 @@ export class RecipeEditComponent implements OnInit {
         }
       )
     );
+    this.noOfIngredients++;
   }
 
 
   deleteIngredient(index) {
     (<FormArray> this.recipeForm.get('ingredients')).removeAt(index);
+    this.noOfIngredients--;
+  }
+
+  scrollTo(): void {
+    // $element.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'nearest'});
+    var headerOffset = 87;
+    // var elementPosition = $element.getBoundingClientRect().top;
+    // var offsetPosition = elementPosition - headerOffset;
+    window.scrollTo({
+      top: headerOffset,
+      behavior: "smooth"
+    });
   }
 
 

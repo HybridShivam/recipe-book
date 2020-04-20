@@ -1,8 +1,8 @@
-<a class="list-group-item clearfix list-group-item-action btn btn-outline-dark rounded-0" [routerLink]="[id]" routerLinkActive="active" role="button">
+<li class="list-group-item clearfix list-group-item-action btn btn-outline-dark rounded-0" [routerLink]="[id]" routerLinkActive="active" role="button">
   <div class="row">
     <div class="col-7">
       <h4 class="list-group-item-heading" style="word-wrap: break-word;">{{recipe.name}}</h4>
-      <p class="list-group-item-text" style="word-wrap: break-word;">{{recipe.desc.length>60?recipe.desc.slice(0,60)+" ...":recipe.desc}}</p>
+      <p class="list-group-item-text" style="word-wrap: break-word;color: #626262">{{recipe.desc.length>60?recipe.desc.slice(0,60)+" ...":recipe.desc}}</p>
     </div>
     <div class="col-5">
       <img
@@ -10,4 +10,4 @@
         alt="" class="img-fluid rounded" style="max-height: 100px">
     </div>
   </div>
-</a>
+</li>

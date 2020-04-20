@@ -15,9 +15,9 @@
     <br *ngIf="!mobile">
     <br *ngIf="!mobile">
     <br>
-    <h3 class="myFont" *ngIf="corresponsingRecipes.length>0">Required For :</h3>
-    <ul class="list-group myShadow makeMeSmall correspondingList">
-      <li class="list-group-item smallerListItem" *ngFor="let recipe of corresponsingRecipes">{{recipe.name}}</li>
+    <h3 class="myFont fade" *ngIf="corresponsingRecipes.length>0" [ngClass]="{ show: showCorresponsingRecipes}">Required For :</h3>
+    <ul class="list-group myShadow makeMeSmall correspondingList fade" [ngClass]="{ show: showCorresponsingRecipes}">
+      <li class="list-group-item smallerListItem show" *ngFor="let recipe of corresponsingRecipes">{{recipe.name}}</li>
     </ul>
   </div>
 </div>
