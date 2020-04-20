@@ -45,6 +45,18 @@ export class HeaderComponent {
   }
 
 
+  scrollToTop(): void {
+    // $element.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'nearest'});
+    // var headerOffset = 87;
+    // // var elementPosition = $element.getBoundingClientRect().top;
+    // // var offsetPosition = elementPosition - headerOffset;
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }
+
+
   // Events for Tab Selection
   // @Output() tabClickEvent = new EventEmitter<string>();
 

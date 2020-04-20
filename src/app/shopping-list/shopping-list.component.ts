@@ -21,9 +21,11 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
   editingMode = false;
   modeSubscription;
   corresponsingRecipes: Recipe[] = [];
+  mobile = false;
 
   constructor(private shoppingListService: ShoppingListService, private dataStorageService: DataStorageService, private recipeService: RecipeService) {
   }
+
 
   ngOnInit(): void {
     this.ingredients = this.shoppingListService.ingredients;
@@ -33,6 +35,7 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
     this.modeSubscription = this.shoppingListService.modeEmitter.subscribe(mode => {
       this.editingMode = mode;
     });
+    this.mobile = screen.width <= 767;
   }
 
   ngOnDestroy() {

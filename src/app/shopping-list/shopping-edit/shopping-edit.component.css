@@ -1,0 +1,21 @@
+@media (max-width: 767px) {
+
+  .makeMeSmall {
+    font-size: smaller;
+  }
+
+  .btn-responsive {
+    padding: 8px 4px;
+    font-size: 100%;
+    line-height: 1;
+  }
+
+  .smallerTextBoxes{
+    margin-bottom: 5px;
+  }
+
+  .removeLabelMargin{
+    margin-bottom: 2px;
+  }
+
+}

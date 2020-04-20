@@ -1,22 +1,22 @@
 <div class="row">
   <div class="col-12">
-    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm" class="makeMeSmall">
       <div class="row">
-        <div class="col-md-5 form-group">
-          <label for="name">Name</label>
+        <div class="col-md-5 form-group smallerTextBoxes">
+          <label for="name" class="removeLabelMarginremoveLabelMargin">Name</label>
           <input type="text" id="name" name="name" ngModel class="form-control" required maxlength="25">
         </div>
-        <div class="col-md-2 form-group">
-          <label for="amount">Amount</label>
-          <input type="text" id="amount" name="amount" ngModel class="form-control" required pattern="^[1-9]+[0-9]*$" maxlength="3" onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57">
+        <div class="col-md-2 form-group smallerTextBoxes">
+          <label for="amount" class="removeLabelMargin">Amount</label>
+          <input type="text" id="amount" name="amount" ngModel class="form-control smallerTextBoxes" required pattern="^[1-9]+[0-9]*$" maxlength="3" onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57">
         </div>
       </div>
       <div class="row">
-        <div class="col-7 btn-group">
-          <button class="btn btn-success" type="submit" [disabled]="!f.valid">{{editingMode ? "Update" : "Add"}}
+        <div class="col-md-7 col-sm-12 btn-group">
+          <button class="btn btn-success btn-responsive" type="submit" [disabled]="!f.valid">{{editingMode ? "Update" : "Add"}}
           </button>
-          <button class="btn btn-danger" type="button" *ngIf="editingMode==true" (click)="onDelete()" >Delete</button>
-          <button class="btn btn-primary" type="button" (click)="onClear()">Clear</button>
+          <button class="btn btn-danger btn-responsive" type="button" *ngIf="editingMode==true" (click)="onDelete()" >Delete</button>
+          <button class="btn btn-primary btn-responsive" type="button" (click)="onClear()">Clear</button>
 <!--          Add this property to Delete Button-->
 <!--          [disabled]="isEmpty==true||editingMode==false"-->
         </div>

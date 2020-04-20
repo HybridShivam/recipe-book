@@ -2,22 +2,22 @@
   <div class="col-sm-12 col-md-8">
     <app-shopping-edit (clearRequired)="resetCorrespondingRecipes()"></app-shopping-edit>
     <hr>
-    <ul class="list-group ingredientsTable" id="style-2" >
-      <a class="list-group-item d-flex justify-content-between align-items-center" style="cursor: pointer" *ngFor="let ingredient of ingredients;let  i =index"
+    <ul class="list-group ingredientsTable" id="ingredientsList" >
+      <a class="list-group-item d-flex justify-content-between align-items-center smallerListItem" style="cursor: pointer" *ngFor="let ingredient of ingredients;let  i =index"
          (click)="onEdit(i)" [ngClass]="{selectedItem: editingItemIndex==i && editingMode==true }">
         {{ ingredient.name }} <span class="badge badge-primary badge-pill">{{ ingredient.amount }}</span>
       </a>
     </ul>
   </div>
   <div class="col-md-4 col-sm-12">
-    <br>
-    <br>
-    <br>
-    <br>
+    <br *ngIf="!mobile">
+    <br *ngIf="!mobile">
+    <br *ngIf="!mobile">
+    <br *ngIf="!mobile">
     <br>
     <h3 class="myFont" *ngIf="corresponsingRecipes.length>0">Required For :</h3>
-    <ul class="list-group myShadow">
-      <li class="list-group-item" *ngFor="let recipe of corresponsingRecipes">{{recipe.name}}</li>
+    <ul class="list-group myShadow makeMeSmall correspondingList">
+      <li class="list-group-item smallerListItem" *ngFor="let recipe of corresponsingRecipes">{{recipe.name}}</li>
     </ul>
   </div>
 </div>

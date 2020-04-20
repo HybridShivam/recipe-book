@@ -27,26 +27,47 @@ export class RecipesComponent implements OnInit,OnDestroy {
   }
 
   scrollToElement($element): void {
-    // $element.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'nearest'});
-    let headerOffset = 87;
-    if (screen.width <= 320) {
-      headerOffset = 500;
-    } else if (screen.width <= 375 && screen.height >= 800) {
-      headerOffset = 600;
-    } else if (screen.width <= 375) {
-      headerOffset = 550;
-    } else if (screen.width <= 767) {
-      headerOffset = 600;
+    if(screen.width<=767){
+    $element.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'nearest'});}
+    else {
+      let headerOffset = 87;
+      // if (screen.width <= 320) {
+      //   headerOffset = 400;
+      // } else if (screen.width <= 375 && screen.height >= 800) {
+      //   headerOffset = 574;
+      // } else if (screen.width <= 375) {
+      //   headerOffset = 525;
+      // } else if (screen.width <= 767) {
+      //   headerOffset = 535;
+      // }
+      let elementPosition = $element.getBoundingClientRect().top;
+      if (headerOffset == elementPosition) {
+        headerOffset = elementPosition - headerOffset;
+      }
+      window.scrollTo({
+        top: headerOffset,
+        behavior: 'smooth'
+      });
     }
-    let elementPosition = $element.getBoundingClientRect().top;
-    if (headerOffset == elementPosition) {
-      headerOffset = elementPosition - headerOffset;
-    }
-    ;
-    window.scrollTo({
-      top: headerOffset,
-      behavior: 'smooth'
-    });
+    // let headerOffset = 87;
+    // if (screen.width <= 320) {
+    //   headerOffset = 400;
+    // } else if (screen.width <= 375 && screen.height >= 800) {
+    //   headerOffset = 574;
+    // } else if (screen.width <= 375) {
+    //   headerOffset = 525;
+    // } else if (screen.width <= 767) {
+    //   headerOffset = 535;
+    // }
+    // let elementPosition = $element.getBoundingClientRect().top;
+    // if (headerOffset == elementPosition) {
+    //   headerOffset = elementPosition - headerOffset;
+    // }
+    // ;
+    // window.scrollTo({
+    //   top: headerOffset,
+    //   behavior: 'smooth'
+    // });
   }
 
   ngOnDestroy(): void {

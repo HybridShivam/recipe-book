@@ -1,20 +1,19 @@
 <br>
 <br>
 <br>
-<div class="row">
+<div class="row imageRow">
   <div class="col-12">
     <img src="{{recipeFromRecipeComponent.imagePath}}" alt="" class="img-fluid rounded shadow"
          (click)="scrollToElement()">
   </div>
 </div>
-<br>
-<div class="row detailsFont" style="font-size: xx-large">
-  <div class="col-7">
-    <h1 style="word-wrap: break-word;">{{recipeFromRecipeComponent.name}}</h1>
+<div class="row detailsFont" style="text-size: xxlarge;">
+  <div class="col-7" style="height: max-content">
+    <h1 style="word-wrap: break-word; vertical-align: middle" class="makeHeadingSmaller">{{recipeFromRecipeComponent.name}}</h1>
   </div>
   <div class="col-5 text-right">
-    <div class="btn-group dropup">
-      <button type="button" class="btn btn-primary dropdown-toggle" appDropdown style="white-space: break-spaces">Manage<span
+    <div class="btn-group dropup"  style="height: max-content">
+      <button type="button" class="btn btn-primary dropdown-toggle btn-responsive" appDropdown style="white-space: break-spaces;margin-top: 5px">Manage<span
         class="caret"></span>
       </button>
       <div class="dropdown-menu dropdown-menu-right" data-placement="auto">
@@ -26,9 +25,9 @@
     </div>
   </div>
 </div>
-<hr>
-<div class="row detailsFont" style="font-size: x-large">
-  <div class="col-12">{{recipeFromRecipeComponent.desc}}</div>
+
+<div class="row detailsFont" style="font-size: large;word-wrap: break-word;">
+  <div class="col-12 makeMeSmall">{{recipeFromRecipeComponent.desc}}</div>
 </div>
 <hr>
 <div class="row" *ngIf="recipeFromRecipeComponent.ingredients.length>0">

@@ -6,3 +6,49 @@
   -moz-box-shadow: 0px 0px 31px 3px rgba(0,0,0,0.23);
   box-shadow: 0px 0px 31px 3px rgba(0,0,0,0.23);
 }
+
+.imageRow{
+  margin-bottom: 15px;
+}
+@media (max-width: 767px) {
+
+  .imageRow{
+    margin-bottom: 10px;
+  }
+
+  .makeMeSmall {
+    font-size: smaller;
+  }
+  .makeHeadingSmaller{
+    font-size: x-large;
+    padding-top: 7px;
+    line-height: 1;
+    margin-bottom: auto;
+  }
+
+  .detailsFont{
+    margin-bottom: 8px;
+  }
+
+
+  /*hr{*/
+  /*  margin-top: 4px;*/
+  /*}*/
+
+
+  .btn-responsive {
+    padding: 6px 4px;
+    /*margin-bottom: 12px;*/
+    /*font-size: 100%;*/
+    line-height: 1;
+  }
+
+  /*.smallerTextBoxes{*/
+  /*  margin-bottom: 5px;*/
+  /*}*/
+
+  /*.removeLabelMargin{*/
+  /*  margin-bottom: 2px;*/
+  /*}*/
+
+}

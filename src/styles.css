@@ -9,7 +9,7 @@
 
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 6px;
 }
 
 /* Track */
@@ -27,6 +27,14 @@
   background: #555;
 }
 
+
+@media (max-width: 767px) {
+  #footer{
+    font-size: smaller;
+    padding-bottom: 20px;
+    padding-top: 20px;
+  }
+}
 
 
 

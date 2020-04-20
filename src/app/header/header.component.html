@@ -5,11 +5,11 @@
     </button>
   <div class="navbar-collapse dropdown-toggle coolFont" [ngClass]="{collapse: isCollapsed}" id="nav">
     <ul class="nav navbar-nav">
-      <li class="nav-item"><a href="http://hybridshivam.tech" class="nav-link">Home</a>
+<!--      <li class="nav-item"><a href="http://hybridshivam.tech" class="nav-link">HybridShivam.tech</a>-->
+<!--      </li>-->
+      <li class="nav-item"><a class="nav-link" routerLink="/recipes" routerLinkActive="active" (click)="collapse();scrollToTop()">Recipes</a>
       </li>
-      <li class="nav-item"><a class="nav-link" routerLink="/recipes" routerLinkActive="active" (click)="collapse()">Recipes</a>
-      </li>
-      <li class="nav-item"><a class="nav-link" routerLink="/shopping-list" routerLinkActive="active" (click)="collapse()">Shopping List</a>
+      <li class="nav-item"><a class="nav-link" routerLink="/shopping-list" routerLinkActive="active" (click)="collapse();scrollToTop()">Shopping List</a>
       </li>
     </ul>
     <ul class="nav navbar-nav ml-auto coolFont" style="left:0">
