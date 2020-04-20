@@ -11,11 +11,15 @@
     -webkit-box-shadow: 0px 0px 173px 45px rgba(0, 0, 0, 0.15);
     -moz-box-shadow: 0px 0px 173px 45px rgba(0, 0, 0, 0.15);
     box-shadow: 0px 0px 173px 45px rgba(0, 0, 0, 0.15);
+    /*border: 1px black;*/
   }
 }
 
 @media (max-width: 767px) {
   .list-group{
     max-height: 50vh;
+  }
+  .recipeListRow{
+    margin-bottom: 20px;
   }
 }
