@@ -4,11 +4,14 @@
 .dropdown-toggle::after {
   display: none;
 }
-.myShadow{
-  -webkit-box-shadow: 0px 0px 60px 23px rgba(0,0,0,0.15);
-  -moz-box-shadow: 0px 0px 60px 23px rgba(0,0,0,0.15);
-  box-shadow: 0px 0px 60px 23px rgba(0,0,0,0.15);
+@media (min-width: 768px) {
+  .myShadow{
+    -webkit-box-shadow: 0px 0px 60px 23px rgba(0,0,0,0.15);
+    -moz-box-shadow: 0px 0px 60px 23px rgba(0,0,0,0.15);
+    box-shadow: 0px 0px 60px 23px rgba(0,0,0,0.15);
+  }
 }
+
 /*navBar Shadow*/
 .navbar {
   /*-webkit-box-shadow: 0 8px 6px -6px #999;*/
@@ -19,6 +22,46 @@
   box-shadow: 0px 6px 51px 2px rgba(0,0,0,0.24);
   /* the rest of your styling */
 }
+
+@media (max-width: 767px) {
+  .smallerNav{
+    font-size: smaller;
+    padding: 0;
+  }
+
+  .navbar-brand{
+    color: black;
+    font-family: 'Pacifico', cursive;
+    font-size: xx-large;
+    -webkit-transition: color 1s; /* For Safari 3.0 to 6.0 */
+    transition: color 1s; /* For modern browsers */
+  }
+  .navbar-toggler-icon{
+    max-height: 25px;
+    max-width: 25px;
+  }
+  .navbar-nav .dropdown-menu{
+    border: none;
+    background: none;
+  }
+  .dropdown-item .alert-danger{
+    background-color: white;
+  }
+  .saveLoad{
+    font-size: medium;
+    background-color: transparent;
+  }
+}
+
+@media (max-width: 767px) {
+
+
+}
+
+
+
+
+
 
 .coolFont{
   font-family: 'Roboto Condensed', sans-serif;
@@ -38,25 +81,14 @@
   color: #75590c;
 }
 
-.highLightMeOnHover{
-  /*-webkit-transition: color,background-color 0.1s; !* For Safari 3.0 to 6.0 *!*/
-  /*transition: color,background-color 0.1s; !* For modern browsers *!*/
-}
-
 .highLightMeOnHover:hover{
   background-color: black;
   color: white;
 }
 
 
-@media (max-width: 767px) {
-  .navbar-toggleable-sm {
-    clear: both;
-  }
-  .navbar-brand{
-    font-size: x-large;
-  }
-}
+
+
 
 .nav-link {
   display: inline-grid;
