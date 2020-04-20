@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, ElementRef, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {DataStorageService} from '../shared/data-storage.service';
 
 @Component({
@@ -12,11 +12,13 @@ export class RecipesComponent implements OnInit,OnDestroy {
   // mobile = false;
   // loaded=false;
   // loadingSubscription;
+  @ViewChild('list',{static:true}) list: ElementRef;
 
-  constructor(private dataStorageService: DataStorageService) {
+  constructor(private dataStorageService: DataStorageService,private elementRef:ElementRef) {
   }
 
   ngOnInit(): void {
+    this.scrollToElement(this.list.nativeElement);
     // this.mobile = screen.width <= 767;
     // this.loadingSubscription=this.dataStorageService.dataFetched.subscribe(value =>{
     //   this.loaded=value;
