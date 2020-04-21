@@ -20,13 +20,6 @@ import {smoothscroll} from 'smoothscroll-polyfill';
 import {CookieService} from 'ngx-cookie-service';
 import {AnimateOnScrollModule} from 'ng2-animate-on-scroll';
 
-// import {APP_BASE_HREF} from '@angular/common';
-// import "@angular/compiler";
-// // MDB Angular Pro
-// import { ButtonsModule, WavesModule, DropdownModule } from 'angular-bootstrap-md';
-
-// import {Pokedex} from 'pokedex-api';
-
 @NgModule({
   declarations: [
     AppComponent,
