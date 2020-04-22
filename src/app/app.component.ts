@@ -12,7 +12,6 @@ import {RecipeService} from './recipes/recipe.service';
 })
 export class AppComponent implements OnInit {
   constructor(private router: Router, private dataStorageService: DataStorageService, recipeService: RecipeService) {
-    router.navigate(['/recipes']);
   }
 
   ngOnInit(): void {
