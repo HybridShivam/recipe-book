@@ -109,8 +109,14 @@
 
 
 }
-/*.dropdown-menu {display: block;visibility: hidden;opacity:0;transform: translateY(50px);transition:.5s ease all;}*/
-/*.dropdown-menu.show {display: block;visibility: visible;opacity:1;transform: translateY(0px);transition:.5s ease all;}*/
+
+
+
+@media (min-width: 576px) {
+  .dropdown-menu {display: block; overflow:hidden;visibility: hidden;opacity:0;transform: translateY(50px);transition:.5s ease all;}
+  .dropdown-menu.show {display: block; overflow:hidden; visibility: visible;opacity:1;transform: translateY(0px);transition:.5s ease all;}
+}
+
 
 .navbar-brand:hover {
   color: #75590c;
