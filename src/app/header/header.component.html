@@ -7,9 +7,9 @@
     <ul class="nav navbar-nav">
 <!--      <li class="nav-item"><a href="http://hybridshivam.tech" class="nav-link">HybridShivam.tech</a>-->
 <!--      </li>-->
-      <li class="nav-item"><a class="nav-link smallerNav" routerLink="/recipes" routerLinkActive="active" (click)="collapse();scrollToTop()">Recipes</a>
+      <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show"><a class="nav-link smallerNav" routerLink="/recipes" routerLinkActive="active" (click)="collapse();scrollToTop()">Recipes</a>
       </li>
-      <li class="nav-item"><a class="nav-link smallerNav" routerLink="/shopping-list" routerLinkActive="active" (click)="collapse();scrollToTop()">Shopping List</a>
+      <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show"><a class="nav-link smallerNav" data-toggle="collapse" routerLink="/shopping-list" routerLinkActive="active" (click)="collapse();scrollToTop()">Shopping List</a>
     </ul>
     <ul class="nav navbar-nav ml-auto coolFont" style="left:0">
       <li class="nav-item dropdown">
@@ -18,11 +18,11 @@
            aria-expanded="true" appDropdown style="color: darkred">Save / Load</a>
         <div class="dropdown-menu dropdown-menu-right myShadow"
              aria-labelledby="manageMenu" id="manage">
-          <a class="dropdown-item highLightMeOnHover saveLoad" style="cursor: pointer" (click)="storeRecipes();collapse()">Save Personal Data</a>
-          <a class="dropdown-item highLightMeOnHover saveLoad" style="cursor: pointer" (click)="fetchRecipes();collapse()" routerLink="/">Load Personal Data</a>
+          <a class="dropdown-item highLightMeOnHover saveLoad" data-toggle="collapse" data-target=".navbar-collapse.show" style="cursor: pointer" (click)="storeRecipes();collapse()">Save Personal Data</a>
+          <a class="dropdown-item highLightMeOnHover saveLoad" data-toggle="collapse" data-target=".navbar-collapse.show" style="cursor: pointer" (click)="fetchRecipes();collapse()" routerLink="/">Load Personal Data</a>
           <hr class="hideHROnSmall">
-<!--          <a class="dropdown-item highLightMeOnHover" style="cursor: pointer" (click)="saveAsServerRecipes();collapse()" routerLink="/">Save as Server's Original Data</a>-->
-          <a class="dropdown-item alert-danger highLightMeOnHover saveLoad" style="cursor: pointer" (click)="revertToServerRecipes();collapse()" routerLink="/">Revert to Server's Original Data</a>
+<!--          <a class="dropdown-item highLightMeOnHover" data-toggle="collapse" data-target=".navbar-collapse.show" style="cursor: pointer" (click)="saveAsServerRecipes();collapse()" routerLink="/">Save as Server's Original Data</a>-->
+          <a class="dropdown-item alert-danger highLightMeOnHover saveLoad" data-toggle="collapse" data-target=".navbar-collapse.show" style="cursor: pointer" (click)="revertToServerRecipes();collapse()" routerLink="/">Revert to Server's Original Data</a>
         </div>
       </li>
     </ul>
