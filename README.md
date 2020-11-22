@@ -4,7 +4,7 @@
 
 # Recipe-Book App
 
-URL: [https://hybridshivam.tech/recipe-book/](https://hybridshivam.tech/recipe-book/)
+URL: [https://hybridshivam.com/recipe-book/](https://hybridshivam.com/recipe-book/)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0.
 
